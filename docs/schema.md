@@ -1,51 +1,54 @@
-<!-- USERS:
-#
-#  id                 :integer          not null, primary key
-#  username           :string           not null, indexed, unique
-#  password_digest    :string           not null
-#  session_token      :string           not null, indexed, unique
-#  name               :string         
+## Users
+Column Name     | Data Type | Details
+----------------|-----------|-----------------------
+id              | integer   | not null, primary key
+username        | string    | not null, indexed, unique
+name            | string    |
+password_digest | string    | not null
+session_token   | string    | not null, indexed, unique
+
+## Products
+Column Name | Data Type | Details
+------------|-----------|-----------------------
+id          | integer   | not null, primary key
+title       | string    | not null
+artist_id   | integer   | not null, foreign key (references users), indexed
+description | string    | not null
+price       | integer   | not null
+in_stock    | boolean   | not null, default: true
+image       | image     | not null
+
+## Product Types
+Column Name | Data Type | Details
+------------|-----------|-----------------------
+id          | integer   | not null, primary key
+name        | string    | not null
+product_id  | integer   | not null, foreign key (references products), indexed
 
 
-<!-- REVIEWS:
-#
-#  id                 :integer          not null, primary key
-#  user_id            :integer          not null, foreign key (references user), indexed
-#  product_id         :integer          not null, foreign key (references product), indexed
-#  rating             :integer          not null, default: 1
-#  comment            :text             not null
+## Cart
+Column Name | Data Type | Details
+------------|-----------|-----------------------
+id          | integer   | not null, primary key
+user_id     | integer   | not null, foreign key (references users), indexed
 
 
-
-<!-- PRODUCTS:
-#
-#  id                 :integer          not null, primary key
-#  artist_id          :integer          not null, foreign key (references users), indexed
-#  title              :string           not null
-#  in_stock           :boolean          not null, default: true
-#  description        :text             not null
-#  price              :integer          not null
-#  image              :image            not null
+## Cart Items
+Column Name | Data Type | Details
+------------|-----------|-----------------------
+id          | integer   | not null, primary key
+cart_id     | integer   | not null, foreign key (references cart), indexed
+product_id  | integer   | not null, foreign key (references product), indexed
+quantity    | integer   | default: 1
+option      | string    | not null
 
 
-<!-- PRODUCT TYPES:
-#
-#  id                 :integer          not null, primary key
-#  name               :string           not null
-#  product_id         :integer          not null, foreign key (references products), indexed
-
-
-
-<!-- CART:
-#
-#  id                 :integer          not null, primary key
-#  user_id            :integer          not null, foreign key (references users), indexed
-
-
-<!-- CART ITEMS:
-#
-#  id                 :integer          not null, primary key
-#  cart_id          ``:integer          not null, foreign key (references cart), indexed
-#  product_id            :integer          not null, foreign key (references product), indexed
-#  quantity           :integer          default: 1
-#  option             :string            not null
+## Reviews
+Column Name | Data Type | Details
+------------|-----------|-----------------------
+id          | integer   | not null, primary key
+user_id     | integer   | not null, foreign key (references users), indexed
+product_id  | integer   | not null, foreign key (references products), indexed
+rating      | integer   | not null, default: 1
+title       | string    | not null
+comment     | text      |
