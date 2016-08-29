@@ -6,17 +6,17 @@
     2. `POST /api/users` is called.
     3. `receiveCurrentUser` is set as the success callback.
 * logIn
-  1. invoked from `LoginForm` `onSubmit`
-  2. `POST /api/session` is called.
-  3. `receiveCurrentUser` is set as the callback.
+    1. invoked from `LoginForm` `onSubmit`
+    2. `POST /api/session` is called.
+    3. `receiveCurrentUser` is set as the callback.
 * logOut
-  1. invoked from Navbar `onClick`
-  2. `DELETE /api/session` is called.
-  3. `removeCurrentUser` is set as the success callback.
+    1. invoked from `NavBarForm` `onClick`
+    2. `DELETE /api/session` is called.
+    3. `removeCurrentUser` is set as the success callback.
 * fetchCurrentUser
-  1. invoked from App in `didMount`
-  2. `GET /api/session` is called.
-  3. `receiveCurrentUser` is set as the success callback.
+    1. invoked from `NavBar` in `didMount`
+    2. `GET /api/session` is called.
+    3. `receiveCurrentUser` is set as the success callback.
 
 ##Session API Response Actions
 * `receiveCurrentUser`
@@ -31,10 +31,10 @@
 ---
 ##Error API Response Actions
 * `setErrors`
-  1. invoked from API callbacks on error for actions that generate POST requests
+  1. invoked from `API callbacks on error` for *actions that generate* `POST requests`
   2. the `ErrorReducer` stores the form in the application's state; errors are mapped to their respective forms
 * `clearErrors`
-  1. invoked from API callbacks on success for actions that generate POST requests
+  1. invoked from `API callbacks on success` for *actions that generate* `POST requests`
   2. the `ErrorReducer` removes errors for a given form in the application's state.
 
 
@@ -52,12 +52,12 @@
   3. `receiveTypeProducts` is set as the success callback.
 
 * `fetchSingleProduct`
-  1. invoked from `ProductDetail`
+  1. invoked from `ProductShow`
   2. `GET /api/products/:id` is called.
   3. `receiveSingleProduct` is set as the success callback.
 
 * `destroyProduct`
-  1. invoked from delete item button `onClick`
+  1. invoked from *delete item button* `onClick`
   2. `DELETE /api/products/:id` is called.
   3. `removeProduct` is set as the success callback.
 
@@ -89,17 +89,17 @@
   3. `receiveAllCartItems` is set as the success callback.
 
 * `fetchSingleCartItem`
-  1. invoked from `ProductDetails`
+  1. invoked from `CartIndexItem`
   2. `GET /api/products/:id` is called.
   3. `receiveSingleProduct` is set as the success callback.
 
 * `updateCartItem`
-  1. invoked from `CartForm` on `onSubmit`
+  1. invoked from `CartForm` on `onChange`
   2. `PATCH api/cart_items/:id` is called.
   3. `receiveSingleCartItem` is set as success callback.
 
 * `destroyCartItem`
-  1. invoked from delete product item button `onClick`
+  1. invoked from *remove product item button* `onClick`
   2. `DELETE /api/cart_items/:id` is called.
   3. `removeCartItem` is set as the success callback.
 
@@ -110,11 +110,11 @@
 
 * `receiveSingleCartItem`
   1. invoked from an API callback.
-  2. The `CartItemReducer` updates `cart_item[id]` in the application's state.
+  2. The `CartItemsReducer` updates `cart_items[id]` in the application's state.
 
 * `removeCartItem`
   1. invoked from an API callback
-  2. the `CartItemsReducer` `removes cart_item[id]` from the application's state.
+  2. the `CartItemsReducer` removes `cart_item[id]` from the application's state.
 
 
 
@@ -122,12 +122,12 @@
 ---
 ##Reviews API Request Actions
 * `fetchAllReviews`
-  1. invoked from `ProductsIndex`
+  1. invoked from `ProductsIndexItem`
   2. `GET /api/reviews` is called.
   3. `receiveAllReviews` is set as the success callback.
 
 * `createReview`
-  1. invoked from create review button `onClick`
+  1. invoked from *create review button* `onClick`
   2. `POST /api/reviews` is called.
   3. `receiveSingleReview` is set as the callback.
 
@@ -138,7 +138,7 @@
 
 * `receiveSingleReview`
   1. invoked from an API callback.
-  2. The `ReviewsReducer` updates `review[id]` in the application's state.
+  2. The `ReviewsReducer` updates `reviews[id]` in the application's state.
 
 
 #SearchSuggestion Cycles

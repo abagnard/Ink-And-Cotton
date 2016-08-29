@@ -12,35 +12,21 @@ Column Name | Data Type | Details
 ------------|-----------|-----------------------
 id          | integer   | not null, primary key
 title       | string    | not null
+type        | string    | not null
 artist_id   | integer   | not null, foreign key (references users), indexed
 description | string    | not null
 price       | integer   | not null
 in_stock    | boolean   | not null, default: true
-image       | image     | not null
+img_url     | string    | not null
 
-## Product Types
+
+## CartItems
 Column Name | Data Type | Details
 ------------|-----------|-----------------------
 id          | integer   | not null, primary key
-name        | string    | not null
-product_id  | integer   | not null, foreign key (references products), indexed
-
-
-## Cart
-Column Name | Data Type | Details
-------------|-----------|-----------------------
-id          | integer   | not null, primary key
-user_id     | integer   | not null, foreign key (references users), indexed
-
-
-## Cart Items
-Column Name | Data Type | Details
-------------|-----------|-----------------------
-id          | integer   | not null, primary key
-cart_id     | integer   | not null, foreign key (references cart), indexed
+user_id     | integer   | not null, foreign key (references user), indexed
 product_id  | integer   | not null, foreign key (references product), indexed
 quantity    | integer   | default: 1
-option      | string    | not null
 
 
 ## Reviews

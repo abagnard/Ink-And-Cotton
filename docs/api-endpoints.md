@@ -6,7 +6,7 @@
 #JSON API
 ---
 ###Users
-POST /api/users
+  POST /api/users
 
 ###Session
   GET /api/session
@@ -19,11 +19,6 @@ POST /api/users
   GET /api/products/:id
   PATCH /api/products/:id
   DELETE /api/products/:id
-
-###Product Types
-  GET /api/product_types/:id
-  POST /api/product_types
-  DELETE /api/product_types/:id
 
 ###Reviews
   GET /api/reviews

@@ -3,14 +3,13 @@
 Ink and Cotton is a web application inspired by Paper and Fabric build using Ruby on Rails and React/Redux. By the end of Week 9, this app will, at a minimum, satisfy the following criteria with smooth, bug-free navigation, adequate seed data and sufficient CSS styling:
 * Hosting on `Heroku`
 * `New account creation`, `login`, and `guest/demo` login
-* `Products` Lists (ink, cotton, artist, all)
-* Individual product view
-* `Reviews`
-* `Cart` (checkout, update)
+* `Products` Views (all, artist, ink, cotton, item)
+* `Reviews` (view, create)
+* `Cart` (update, checkout)
 * `Search`
 * Production `README`
-* BONUS: Tags/Filter
-* BONUS: Favorites
+* BONUS: grid/stream view
+* BONUS: favorites
 
 #Design Docs
 ---
@@ -39,63 +38,74 @@ Ink and Cotton is a web application inspired by Paper and Fabric build using Rub
 * Style signup/signin components
 * Seed users
 
-##Phase 2: Products (and Types) Model, API, and components (2 days)
+##Phase 2: Products Model, API, and components (2 days)
 ###Objective: Products can be viewed through the API.
 *  `Products` model
 *  CRUD API for Products (`ProductsController`)
 *  seed 1 ink and 1 cotton from one artist
 *  JBuilder views for Products
 *  Product components and respective Redux loops
-    *  Product actions
-    *  Product AJAX
+    *  `ProductsIndex`
+        *  `ProductsIndexItem`
+            *  `InkIndex`
+                *  `InkIndexItem`
+            *  `CottonIndex`
+                *  `CottonIndexItem`
+*  `Product actions`
+*  `Product util (AJAX)`
 *  `ProductsReducer`
 *  `ProductsMiddleware`
-*  ProductsIndex
-*  ProductForm
-*  Style Product Item View
+*  Style Product Show Component
 *  Seed Products
 
-##Phase 3: CSS - homepage, artist, ink, cotton (2 days)
+##WEEKEND: CSS - homepage, artist, ink, cotton (2 days)
 ###Objective: Visually make sure all these pages are looking good and setup properly
 *  Homepage
-    *  Header - img, login link, home button, cart button, searchbar
+    *  NavBar - img, login link, home button, cart button, searchbar
     *  Footer - links
-    *  New Ink / New Cotton Headers
-    *  UL for Product Items
-*  Artist Page
-    *  Header
-    *  UL for Product Items
+    *  InkIndex
+    *  CottonIndex
+* Artist List Page
+    * Header
+    * links to Artists' Page
+* Artist Page
+    *  ProductItem/:artist_id
     *  links to all/ink/cotton
 *  Ink / Cotton Pages
-    *  Header
-    *  UL for Product Items
+    *  InkIndex
+    *  CottonIndex
+    *  UL for all ProductItems
 
-##Phase 4: Reviews (1 day)
+##Phase 3: Reviews (1 day)
 ####Objective: Reviews belong to Product Item and can be created.
 *  `Reviews` model
 *  CRUD API for Reviews (`ReviewsController`)
 *  Seed database with a small amount of test data
 *  JBuilder views for reviews
 *  Review components and respective Redux loops
-    *  Review actions
-    *  Review AJAX
-*  Reviews Reducer
-*  Reviews Middleware
+    *  `ReviewsIndex`
+    *  `ReviewsIndexItem`
+*  `Reviews actions`
+*  `Reviews util (AJAX)`
+*  `ReviewsReducer`
+*  `ReviewsMiddleware`
 *  Style review components
 *  Seed reviews
 
-##Phase 5: Cart (2 days)
+##Phase 5: CartItems (2 days)
 ####Objective: Cart can be updated (change quantity of item and remove item option). Checkout button
-*  `Carts` model
-*  CRUD API for Carts (`CartsController`)
+*  `CartItems` model
+*  CRUD API for Carts (`CartItemsController`)
 *  JBuilder views for carts
 *  Cart components and respective Redux loops
-    *  Cart actions
-    *  Cart AJAX
-*  Carts Reducer
-*  Carts Middleware
-*  Style cart components
-*  Seed carts
+    *  `CartItemsIndex`
+    *  `CartItemsIndexItem`
+*  `CartItems actions`
+*  `CartItems util (AJAX)`
+*  `CartItemsReducer`
+*  `CartItemsMiddleware`
+*  Style CartItems components
+*  Seed CartItems
 
 ##Phase 6: Search (1 day)
 ####Objective: Search bar provides search results
