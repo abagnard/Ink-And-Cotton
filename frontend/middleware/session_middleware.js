@@ -2,9 +2,12 @@ import { signup, login, logout } from '../util/session_api_util';
 import { SessionConstants, receiveCurrentUser, receiveErrors } from '../actions/session_actions';
 
 
-export const SessoinMiddleware = state => next => action => {
-  const successCallback = user => state.dispatch(receiveCurrentUser(user));
-  const errorCallback = errors => state.dispatch(receiveErrors(errors));
+export const SessoinMiddleware = ({getState, dispatch}) => next => action => {
+  const successCallback = user => dispatch(receiveCurrentUser(user));
+  const errorCallback = xhr => {
+    const errors = xhr.responseJSON;
+    dispatch(receiveErrors(errors));
+  };
   switch (action.type) {
     case SessionConstants.SIGNUP:
       signup(action.user, successCallback, errorCallback);
