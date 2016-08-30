@@ -1,6 +1,6 @@
+import { receiveCurrentUser, receiveErrors} from '../actions/session_actions';
 
-
-export const singup = (user, success, error) => {
+export const signup = (user, success, error) => {
   $.ajax({
     method: 'POST',
     url: '/api/user',
