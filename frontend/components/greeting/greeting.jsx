@@ -21,10 +21,19 @@ class Greeting extends React.Component {
     const {currentUser, logout} = this.props;
 
     return (
-      <header className="header-group">
-        <h2 className="header-name">Hi, {currentUser.username}!</h2>
-        <button className="header-logout" onClick={(e) => this.logoutPreventDefault(e, logout)}>Log Out</button>
-      </header>
+      <div>
+        <header className="header-group">
+          <span>Current User: {currentUser.username}</span>
+          <button className="header-logout" onClick={(e) => this.logoutPreventDefault(e, logout)}>Log Out</button>
+          <span className="header-logo">INK & COTTON</span>
+          <button className="cart">Cart</button>
+        </header>
+        <header>
+            <Link to="/">Artists</Link>
+            <Link to="/">Ink</Link>
+            <Link to="/">Cotton</Link>
+        </header>
+      </div>
     );
   }
 
