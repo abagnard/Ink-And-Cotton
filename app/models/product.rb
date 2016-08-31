@@ -16,6 +16,7 @@
 
 class Product < ActiveRecord::Base
   validates :title, :medium, :artist_id, :price, :in_stock, presence: true
+  validates :title, uniqueness: true
 
   belongs_to :user
 
