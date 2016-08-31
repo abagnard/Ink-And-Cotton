@@ -10,10 +10,88 @@
  * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
  * file per style scope.
  *
- *= require_tree .
- *= require_self
+
+
  */
 
+
+
 * {
-  border: 1px solid black;
+  /*border: 1px solid black;*/
+}
+
+body {
+  background-image: url("http://mayahayuk.com/dev/files/projects/chem-trails-2013/mayaHayuk.CHEMTRAILS.MIAMI.2584.jpg");
+  background-repeat: no;
+}
+
+.header-logo{
+  font-size: 40px;
+  font-weight: bold;
+  border: 6px solid black;
+  padding: 5px 20px 5px 20px;
+}
+
+
+.login-form-container{
+  position: relative;
+  height: 600px;
+  display: flex;
+}
+
+
+.login-form-box{
+  width: 30%;
+  margin: auto;
+  padding: 45px 30px 30px 30px;
+  background: whitesmoke;
+  /* opacity: .9; */
+  border-radius: 5px;
+  border: 1px solid gray;
+  font-family: sans-serif;
+  text-align: center;
+  position: absolute
+  flex: auto;
+}
+
+.login-form{
+  margin: 10px;
+}
+
+.login-input {
+  width: 200px;
+  height: 18px;
+  margin: 5px;
+}
+
+.login-form ul {
+  list-style-type: none;
+  color: red;
+  font-weight: bold;
+}
+
+ul {
+  display: block;
+  padding: 0;
+  font-size: 18px;
+}
+
+.login-form input[type=submit] {
+  border-radius: 2px;
+  background: lightgrey;
+  margin-top: 5px;
+  padding: 4px 10px;
+  color: lightseagreen;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+
+.other-login-option a {
+  margin-left: 5px;
+  color: blueviolet;
+}
+
+span {
+    font-size: 18px;
 }
