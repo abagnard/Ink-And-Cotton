@@ -1,5 +1,5 @@
 import React from 'react';
-import Greeting from '../greeting_container';
+import Greeting from '../greeting/greeting_container';
 import { hashHistory } from 'react-router';
 
 class Home extends React.Component{
