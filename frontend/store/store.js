@@ -1,11 +1,11 @@
 import { createStore } from 'redux';
-import { SessionReducer } from "../reducers/session_reducer";
-import { SessionMiddleware } from "../middleware/session_middleware";
+import { MasterReducer } from "../reducers/master_reducer";
+import { MasterMiddleware } from "../middleware/master_middleware";
 
 export const configureStore = (preloadedState = {}) => (
   createStore(
-    SessionReducer,
+    MasterReducer,
     preloadedState,
-    SessionMiddleware
+    MasterMiddleware
   )
 );

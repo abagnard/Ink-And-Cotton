@@ -10,7 +10,7 @@ class ApplicationController < ActionController::Base
   end
 
   def logged_in?
-    !!currentUser
+    !!current_user
   end
 
   def login(user)

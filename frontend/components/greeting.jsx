@@ -1,6 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router';
 
+const logoutPreventDefault = (e, callback) => {
+  e.preventDefault();
+  callback();
+};
+
 const sessionLinks = () => (
   <nav className="login-signup">
     <Link to="/login" activeClassName="current">Login</Link>
@@ -11,7 +16,7 @@ const sessionLinks = () => (
 const personalGreeting = (currentUser, logout) => (
 	<header className="header-group">
 		<h2 className="header-name">Hi, {currentUser.username}!</h2>
-		<button className="header-logout" onClick={logout}>Log Out</button>
+		<button className="header-logout" onClick={(e) => logoutPreventDefault(e, logout)}>Log Out</button>
 	</header>
 );
 
