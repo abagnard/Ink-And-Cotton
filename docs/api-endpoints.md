@@ -24,7 +24,7 @@
   GET /api/reviews
   POST /api/reviews
   PATCH /api/reviews/:id
-  DELTE /api/reviews/:id
+  DELETE /api/reviews/:id
 
 ###CartItem
   GET api/cart_items

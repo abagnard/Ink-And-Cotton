@@ -79,6 +79,8 @@ ul {
   display: block;
   padding: 0;
   font-size: 18px;
+  margin-top: 5px;
+  margin-bottom: 0;
 }
 
 .login-form input[type=submit] {
