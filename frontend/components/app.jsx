@@ -1,11 +1,12 @@
 import React from 'react';
 import { Link } from 'react-router';
-import GreetingContainer from './greeting_container';
+import HomeContainer from './home/home_form_container';
 
 
 
 export const App = ({children}) => (
   <div>
+
     {children}
   </div>
 );

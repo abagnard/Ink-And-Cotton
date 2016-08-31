@@ -12,9 +12,10 @@ class Home extends React.Component{
 
   render(){
     return(
+
       <div>
-        <Greeting />
-        <span> INK & COTTON </span>
+        < Greeting />
+        <span> HOME FORM UP </span>
       </div>
     );
   }
