@@ -89,10 +89,9 @@ class SessionForm extends React.Component {
 								onChange={this.update("password")}
 								className="login-input" />
 						</label>
-
+						{this.renderErrors()}
 						<br />
 						<input type="submit" value="Submit" />
-						{ this.renderErrors() }
 					</div>
 						{this.navLink()}
 				</form>
