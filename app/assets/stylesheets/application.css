@@ -69,7 +69,8 @@ body {
   margin: 5px;
 }
 
-.login-form ul {
+.other-login-option ul {
+  margin-top: 20px;
   list-style-type: none;
   color: red;
   font-weight: bold;
@@ -83,12 +84,12 @@ ul {
   margin-bottom: 0;
 }
 
-.login-form input[type=submit] {
+.other-login-option input[type=submit] {
   border-radius: 2px;
   background: lightgrey;
   margin-top: 5px;
   padding: 4px 10px;
-  color: lightseagreen;
+  color: blueviolet;
   font-size: 14px;
   font-weight: bold;
 }
@@ -101,4 +102,9 @@ ul {
 
 span {
     font-size: 18px;
+}
+
+.header-group {
+    display: inline-block;
+    background: white;
 }
