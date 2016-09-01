@@ -7,6 +7,10 @@ export class ProductIndexItem extends React.Component {
     this.showDetail = this.showDetail.bind(this);
   }
 
+  componentDidMount(product) {
+    this.props.fetchSingleProduct(product);
+  }
+
   showDetail(e) {
     e.stopPropagation();
     hashHistory.replace("/products/" + this.props.product.id);
@@ -18,6 +22,7 @@ export class ProductIndexItem extends React.Component {
   }
 
   render() {
+
     return (
       <div onClick={this.showDetail} className="product-index-item">
         <img src={this.props.product.img_url} />

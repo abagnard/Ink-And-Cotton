@@ -17,94 +17,210 @@
 
 
 
-* {
-  /*border: 1px solid black;*/
-}
-
-body {
-  background-image: url("http://mayahayuk.com/dev/files/projects/chem-trails-2013/mayaHayuk.CHEMTRAILS.MIAMI.2584.jpg");
-  background-repeat: no;
-}
-
-.header-logo{
-  font-size: 40px;
-  font-weight: bold;
-  text-align: center;
-  border: 6px solid black;
-  padding: 5px 20px 5px 20px;
-  /* display: flex; */
-  position: inherit;
-  width: 40%;
-}
+ /*
+  * This is a manifest file that'll be compiled into application.css, which will include all the files
+  * listed below.
+  *
+  * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+  * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+  *
+  * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+  * compiled file so the styles you add here take precedence over styles defined in any styles
+  * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+  * file per style scope.
+  *
 
 
-.login-form-container{
-  position: relative;
-  height: 600px;
-  /* display: flex; */
-}
+  */
 
 
-.login-form-box{
-  width: 30%;
-  margin: auto;
-  padding: 45px 30px 30px 30px;
-  background: whitesmoke;
-  /* opacity: .9; */
+
+
+
+
+
+
+ * {
+   font-family: sans-serif;
+   /*border: 1px solid black;*/
+ }
+
+ /*body {
+   background-image: url("http://mayahayuk.com/dev/files/projects/chem-trails-2013/mayaHayuk.CHEMTRAILS.MIAMI.2584.jpg");
+   background-repeat: no;
+ }*/
+
+ .login-background {
+   background-image: url("http://mayahayuk.com/dev/files/projects/chem-trails-2013/mayaHayuk.CHEMTRAILS.MIAMI.2584.jpg");
+   background-repeat: no;
+   background-size: 100%, 100%;
+ }
+
+ .header-logo{
+   font-size: 40px;
+   font-weight: bold;
+   text-align: center;
+   border: 6px solid black;
+   padding: 5px 20px 5px 20px;
+   /* display: flex; */
+   position: inherit;
+   width: 40%;
+ }
+
+
+ .login-form-container{
+   position: relative;
+   height: 600px;
+   /* display: flex; */
+ }
+
+
+ .login-form-box{
+   width: 30%;
+   margin: auto;
+   padding: 45px 30px 30px 30px;
+   background: whitesmoke;
+   /* opacity: .9; */
+   border-radius: 5px;
+   border: 1px solid black;
+   font-family: sans-serif;
+   text-align: center;
+   /* position: absolute; */
+   flex: auto;
+ }
+
+ .login-form{
+   margin: 10px;
+ }
+
+ .login-input {
+   width: 200px;
+   height: 18px;
+   margin: 5px;
+ }
+
+ .other-login-option ul {
+   margin-top: 20px;
+   list-style-type: none;
+   color: red;
+   font-weight: bold;
+ }
+
+ ul {
+   display: block;
+   padding: 0;
+   font-size: 18px;
+   margin-top: 5px;
+   margin-bottom: 0;
+ }
+
+ .other-login-option input[type=submit] {
+   border-radius: 2px;
+   background: lightgrey;
+   margin-top: 5px;
+   padding: 4px 10px;
+   color: blueviolet;
+   font-size: 14px;
+   font-weight: bold;
+ }
+
+
+ .other-login-option a {
+   margin-left: 5px;
+   color: blueviolet;
+ }
+
+ span {
+     font-size: 18px;
+ }
+
+ .header-group {
+     display: inline-block;
+     background: white;
+     width: 100%;
+     padding-top: 45px;
+     padding-bottom: 50px;
+     background-image: url("http://mayahayuk.com/dev/files/projects/chem-trails-2013/mayaHayuk.CHEMTRAILS.MIAMI.2584.jpg");
+ }
+
+
+ .product-index-item img {
+     height: 320px;
+     width: inherit;
+ }
+
+ .new-products-title {
+     font-size: 25px;
+     /* border-bottom: 2px solid black; */
+     text-align: center;
+     margin-bottom: 0;
+     font-weight: bold;
+ }
+
+ .item-title {
+     margin: 0 auto;
+     font-weight: bold;
+ }
+
+ .item-artist {
+     margin: 0 auto;
+     font-size: 14px;
+ }
+
+ .item-price {
+     margin: 0 auto;
+     font-size: 14px;
+ }
+
+ button.cart{
+  background: turquoise;
+  color: black;
+  display: flex;
+  float: right;
+  font-size: 20px;
+  margin:  auto;
+  border-color: seagreen;
   border-radius: 5px;
-  border: 1px solid black;
-  font-family: sans-serif;
-  text-align: center;
-  /* position: absolute; */
-  flex: auto;
-}
-
-.login-form{
-  margin: 10px;
-}
-
-.login-input {
-  width: 200px;
-  height: 18px;
-  margin: 5px;
-}
-
-.other-login-option ul {
-  margin-top: 20px;
-  list-style-type: none;
-  color: red;
-  font-weight: bold;
-}
-
-ul {
-  display: block;
-  padding: 0;
-  font-size: 18px;
-  margin-top: 5px;
-  margin-bottom: 0;
-}
-
-.other-login-option input[type=submit] {
-  border-radius: 2px;
-  background: lightgrey;
-  margin-top: 5px;
-  padding: 4px 10px;
-  color: blueviolet;
-  font-size: 14px;
-  font-weight: bold;
+  border-style: outset;
 }
 
 
-.other-login-option a {
-  margin-left: 5px;
-  color: blueviolet;
+/*html, body {
+    height: 100%;
+}*/
+
+.header-group .header-logo {
+    float: initial;
+    background: whitesmoke;
 }
 
-span {
-    font-size: 18px;
+
+header.header-group-sublinks {
+    width: 100%;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    border-top: 1px solid lightgray;
+    border-bottom: 1px solid lightgray;
 }
 
-.header-group {
-    display: inline-block;
-    background: white;
+.header-group-sublinks a {
+    text-align: center;
+    color: slategray;
+    margin-left: 50px;
 }
+
+button.header-logout {
+    color: blueviolet;
+    font-size: 16px;
+    padding: 5px;
+    background: whitesmoke;
+    border-color: whitesmoke;
+    text-align: left;
+    border-style: hidden;
+}
+
+.header-group-img {
+    width: 100%;
+    height: 20px;
+    background-image: url("http://mayahayuk.com/dev/files/projects/chem-trails-2013/mayaHayuk.CHEMTRAILS.MIAMI.2584.jpg");
+  }

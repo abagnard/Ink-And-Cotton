@@ -9,6 +9,7 @@ class SessionForm extends React.Component {
 			password: ""
 		};
 		this.handleSubmit = this.handleSubmit.bind(this);
+		this.handleGuestSubmit = this.handleGuestSubmit.bind(this);
 	}
 
 	componentDidUpdate(){
@@ -31,7 +32,24 @@ class SessionForm extends React.Component {
 		this.props.processForm({user});
 	}
 
+	handleGuestSubmit(e){
+		e.preventDefault();
+		const user = {username: "guest", password: "password"};
+		this.props.processForm({user});
+	}
 
+
+	renderErrors(){
+		return(
+			<ul>
+				{this.props.errors.map( (error, i) => (
+					<li key={`error-${i}`}>
+						{error}
+					</li>
+				))}
+			</ul>
+		);
+	}
 
 
 	navLink(login, signup){
@@ -66,43 +84,34 @@ class SessionForm extends React.Component {
 		}
 	}
 
-	renderErrors(){
-		return(
-			<ul>
-				{this.props.errors.map( (error, i) => (
-					<li key={`error-${i}`}>
-						{error}
-					</li>
-				))}
-			</ul>
-		);
-	}
 
 	render() {
 		return (
-			<div className="login-form-container">
-				<form onSubmit={this.handleSubmit} className="login-form-box">
-					<span className="header-logo">INK & COTTON</span>
-					<br/>
-					<div className="login-form">
-						<br />
-						<label><span>Username:</span>
-							<input type="text"
-								value={this.state.username}
-								onChange={this.update("username")}
-								className="login-input" />
-						</label>
+			<div className="login-background">
+				<div className="login-form-container">
+					<form onSubmit={this.handleSubmit} className="login-form-box">
+						<span className="header-logo">INK & COTTON</span>
+						<br/>
+						<div className="login-form">
+							<br />
+							<label><span>Username:</span>
+								<input type="text"
+									value={this.state.username}
+									onChange={this.update("username")}
+									className="login-input" />
+							</label>
 
-						<br />
-						<label><span>Password:</span>
-							<input type="password"
-								value={this.state.password}
-								onChange={this.update("password")}
-								className="login-input" />
-						</label>
-					</div>
-						{this.navLink()}
-				</form>
+							<br />
+							<label><span>Password:</span>
+								<input type="password"
+									value={this.state.password}
+									onChange={this.update("password")}
+									className="login-input" />
+							</label>
+						</div>
+							{this.navLink()}
+					</form>
+				</div>
 			</div>
 		);
 	}

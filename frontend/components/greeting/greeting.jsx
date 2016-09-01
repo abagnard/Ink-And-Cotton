@@ -28,11 +28,12 @@ class Greeting extends React.Component {
           <span className="header-logo">INK & COTTON</span>
           <button className="cart">Cart</button>
         </header>
-        <header>
+        <header className="header-group-sublinks">
             <Link to="/">Artists</Link>
             <Link to="/">Ink</Link>
             <Link to="/">Cotton</Link>
         </header>
+        <div className="header-group-img"></div>
       </div>
     );
   }
