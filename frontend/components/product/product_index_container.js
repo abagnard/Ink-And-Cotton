@@ -25,7 +25,7 @@ const cottonProducts = state => {
 const mapStateToProps = state => ({
   products: allProducts(state),
   inkProducts: inkProducts(state),
-  cottonProducts: inkProducts(state)
+  cottonProducts: cottonProducts(state)
 });
 
 const mapDispatchToProps = dispatch => ({

@@ -1,8 +1,9 @@
 import React from 'react';
 import { hashHistory } from 'react-router';
 import Greeting from '../greeting/greeting_container';
-import ProductIndex from '../product/product_index_container'
-;
+import ProductIndex from '../product/product_index_container';
+
+
 class Home extends React.Component{
 
   componentWillReceiveProps(nextProps){

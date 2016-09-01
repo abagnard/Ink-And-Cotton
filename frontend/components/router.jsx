@@ -4,6 +4,7 @@ import { App } from './app';
 import SessionFormContainer from './session_form/session_form_container';
 import GreetingContainer from './greeting/greeting_container';
 import HomeContainer from './home/home_form_container';
+import ProductIndexContainer from './product/product_index_container';
 
 
 
@@ -35,6 +36,7 @@ class AppRouter extends React.Component{
           <Route path="/signup" component={ SessionFormContainer } onEnter={this._redirectIfLoggedIn}/>
           <Route component={ HomeContainer } onEnter={this._ensureLoggedIn}>
             <IndexRoute component={ SessionFormContainer } />
+            <Route path="/products/:id" component={ ProductIndexContainer }/>
           </Route>
         </Route>
       </Router>
