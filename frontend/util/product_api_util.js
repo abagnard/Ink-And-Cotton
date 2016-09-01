@@ -1,32 +1,16 @@
-// import { receiveCurrentUser, receiveErrors} from '../actions/product_actions';
-//
-// export const signup = (user, success, error) => {
-//   $.ajax({
-//     method: 'POST',
-//     url: '/api/users',
-//     data: user,
-//     success,
-//     error
-//   });
-// };
-//
-// export const login = (user, success, error) => {
-//   $.ajax({
-//     method: 'POST',
-//     url: '/api/session',
-//     data: user,
-//     success,
-//     error
-//   });
-// };
-//
-// export const logout = (success) => {
-//   $.ajax({
-//     method: 'DELETE',
-//     url: '/api/session',
-//     success,
-//     error: () => {
-//       console.log("Logout error in SessionApiUtil#logout");
-//     }
-//   });
-// };
+import { receiveAllProducts, receiveSingleProduct } from '../actions/product_actions';
+
+export const fetchAllProducts = (success) => {
+  $.ajax({
+    url: '/api/products',
+    success
+  });
+};
+
+export const fetchSingleProduct = (product, success) => {
+  $.ajax({
+    url: '/api/products/{product.id}',
+    data: product,
+    success
+  });
+};
