@@ -4,7 +4,7 @@
 #
 #  id          :integer          not null, primary key
 #  title       :string           not null
-#  medium        :string           not null
+#  medium      :string           not null
 #  artist_id   :integer          not null
 #  description :string
 #  price       :integer          not null
@@ -19,6 +19,7 @@ class Product < ActiveRecord::Base
   validates :title, uniqueness: true
 
   belongs_to :user
-
+  has_many :reviews, dependent: :destroy
+  has_many :cart_items, dependent: :destroy
 
 end

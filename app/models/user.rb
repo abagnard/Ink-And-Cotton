@@ -19,6 +19,8 @@ class User < ActiveRecord::Base
   after_initialize :ensure_session_token
 
   has_many :products, dependent: :destroy
+  has_many :reviews, dependent: :destroy
+  has_many :cart_items, dependent: :destroy
 
   attr_reader :password
 
