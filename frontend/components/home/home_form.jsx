@@ -1,7 +1,8 @@
 import React from 'react';
-import Greeting from '../greeting/greeting_container';
 import { hashHistory } from 'react-router';
-
+import Greeting from '../greeting/greeting_container';
+import ProductIndex from '../product/product_index_container'
+;
 class Home extends React.Component{
 
   componentWillReceiveProps(nextProps){
@@ -16,6 +17,7 @@ class Home extends React.Component{
       <div>
         < Greeting />
         <span> HOME FORM UP </span>
+        < ProductIndex />
       </div>
     );
   }

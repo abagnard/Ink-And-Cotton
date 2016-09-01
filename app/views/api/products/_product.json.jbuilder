@@ -1,2 +1,2 @@
-json.extract! product, :id, :title, :type, :artist_id, :description,
+json.extract! product, :id, :title, :medium, :artist_id, :description,
   :price, :in_stock, :img_url

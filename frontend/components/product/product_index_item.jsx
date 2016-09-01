@@ -1,10 +1,20 @@
 import React from 'react';
 import { hashHistory } from 'react-router';
 
-class ProductIndexItem extends React.Component {
+export class ProductIndexItem extends React.Component {
+  constructor(props){
+    super(props);
+    this.showDetail = this.showDetail.bind(this);
+  }
+
   showDetail(e) {
     e.stopPropagation();
     hashHistory.replace("/products/" + this.props.product.id);
+  }
+
+  artistName(){
+    let artistId = this.props.product.artist_id;
+
   }
 
   render() {

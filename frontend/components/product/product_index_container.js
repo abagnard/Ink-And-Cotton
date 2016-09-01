@@ -1,10 +1,31 @@
 import { connect } from 'react-redux';
-import ProductIndex from './product_index';
 import { fetchAllProducts, fetchSingleProduct } from '../../actions/product_actions';
+import {ProductIndex} from './product_index';
+
+
+
+const allProducts = state => {
+  return state ? Object.keys(state.products).map(id => state.products[id]) : [];
+};
+
+const inkProducts = state => {
+  return state ? Object.keys(state.products).filter(id => {
+    if (state.products[id].medium === "ink") {return state.products[id];}
+  }).map(id => state.products[id]) : [];
+};
+
+const cottonProducts = state => {
+  return state ? Object.keys(state.products).filter(id => {
+    if (state.products[id].medium === "cotton") {return state.products[id];}
+  }).map(id => state.products[id]) : [];
+};
+
 
 
 const mapStateToProps = state => ({
-  product: state.product
+  products: allProducts(state),
+  inkProducts: inkProducts(state),
+  cottonProducts: inkProducts(state)
 });
 
 const mapDispatchToProps = dispatch => ({

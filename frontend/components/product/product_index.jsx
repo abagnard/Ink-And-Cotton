@@ -1,22 +1,26 @@
-import ProductIndexItem from './product_index_item';
+import React from 'react';
+import {ProductIndexItem} from './product_index_item';
 
-class ProductIndex extends React.Component {
+
+export class ProductIndex extends React.Component {
+
   constructor(props){
 		super(props);
-		this.state = {
-			username: "",
-			password: ""
-		};
   }
 
+  componentDidMount() {
+    this.props.fetchAllProducts();
+  }
+
+
+
   render() {
-    const products = this.state.products.map(function (product, idx) {
-      return <ProductListItem key={idx} product={product} />;
-    });
     return (
-      <div className="product-list group">
-        <h3>All Products</h3>
-        {products}
+      <div>
+        {this.props.inkProducts.map(product => (
+          <ProductIndexItem key={product.id} product = {product}/>
+        ))}
+        WE MADE IT TO THE PRODUCT INDEX ITEM
       </div>
     );
   }
