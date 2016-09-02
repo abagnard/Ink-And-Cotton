@@ -64,3 +64,7 @@ AppRouter.contextTypes = {
 };
 
 export default AppRouter;
+
+// <Route path="/artist/:id" component={ ArtistContainer }/>
+// <Route path="/about" component={ InfoContainer }/>
+// <Route path="/contact-us" component={ InfoContainer }/>
