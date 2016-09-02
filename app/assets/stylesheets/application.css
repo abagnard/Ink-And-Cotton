@@ -52,7 +52,7 @@
 
  .login-background {
    background-image: url("http://mayahayuk.com/dev/files/projects/chem-trails-2013/mayaHayuk.CHEMTRAILS.MIAMI.2584.jpg");
-   background-repeat: no;
+   background-repeat: no-repeat;
    background-size: 100%, 100%;
    position: absolute;
    top: 0;

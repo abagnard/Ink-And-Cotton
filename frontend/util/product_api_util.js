@@ -8,8 +8,9 @@ export const fetchAllProducts = (success) => {
 };
 
 export const fetchSingleProduct = (product, success) => {
+  
   $.ajax({
-    url: '/api/products/{product.id}',
+    url: `/api/products/${product.id}`,
     data: product,
     success
   });

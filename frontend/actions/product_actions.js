@@ -10,7 +10,8 @@ export const fetchAllProducts = () => ({
 });
 
 export const fetchSingleProduct = product => ({
-  type: ProductConstants.FETCH_SINGLE_PRODUCT
+  type: ProductConstants.FETCH_SINGLE_PRODUCT,
+  product
 });
 
 export const receiveAllProducts = products => ({
