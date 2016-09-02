@@ -4,12 +4,12 @@ export const UserConstants = {
 };
 
 
-export const fetchSingleUser = user => ({
+export const fetchSingleUser = id => ({
   type: UserConstants.FETCH_SINGLE_USER,
-  user
+  id
 });
 
-export const receiveSingleUser = currentUser => ({
+export const receiveSingleUser = user => ({
   type: UserConstants.RECEIVE_SINGLE_USER,
-  currentUser
+  user
 });

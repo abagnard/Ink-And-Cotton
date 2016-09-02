@@ -7,11 +7,10 @@ export const fetchAllProducts = (success) => {
   });
 };
 
-export const fetchSingleProduct = (product, success) => {
-  
+export const fetchSingleProduct = (id, success) => {
+
   $.ajax({
-    url: `/api/products/${product.id}`,
-    data: product,
+    url: `/api/products/${id}`,
     success
   });
 };

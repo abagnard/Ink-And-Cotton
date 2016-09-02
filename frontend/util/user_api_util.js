@@ -1,10 +1,9 @@
 import { receiveSingleUser } from '../actions/user_actions';
 
-export const fetchSingleUser = (user, success) => {
+export const fetchSingleUser = (id, success) => {
 
   $.ajax({
-    url: `/api/users/${user.id}`,
-    data: user,
+    url: `/api/users/${id}`,
     success
   });
 };

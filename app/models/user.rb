@@ -23,7 +23,7 @@ class User < ActiveRecord::Base
   has_many :cart_items, dependent: :destroy
 
   attr_reader :password
-  # 
+  #
   # def self.find_by_id(id)
   #   return User.find_by(id: id)
   # end

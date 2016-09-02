@@ -7,7 +7,7 @@ export const UserMiddleware = ({getState, dispatch}) => next => action => {
 
   switch (action.type) {
     case UserConstants.FETCH_SINGLE_USER:
-      fetchSingleUser(action.user, successCallback);
+      fetchSingleUser(action.id, successCallback);
       return next(action);
     default:
       return next(action);

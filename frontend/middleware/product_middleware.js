@@ -11,7 +11,7 @@ export const ProductMiddleware = ({getState, dispatch}) => next => action => {
       fetchAllProducts(successCallbackAll);
       return next(action);
     case ProductConstants.FETCH_SINGLE_PRODUCT:
-      fetchSingleProduct(action.product, successCallbackSingle);
+      fetchSingleProduct(action.id, successCallbackSingle);
       return next(action);
     default:
       return next(action);

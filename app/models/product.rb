@@ -18,8 +18,14 @@ class Product < ActiveRecord::Base
   validates :title, :medium, :artist_id, :price, :in_stock, presence: true
   validates :title, uniqueness: true
 
-  belongs_to :user
+  belongs_to :user,
+  foreign_key: :artist_id,
+  primary_key: :id,
+  class_name: :User
+  
   has_many :reviews, dependent: :destroy
   has_many :cart_items, dependent: :destroy
+
+
 
 end

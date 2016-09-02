@@ -1,4 +1,5 @@
 import React from 'react';
+import Bootstrap from 'bootstrap';
 import { hashHistory } from 'react-router';
 import { Link } from 'react-router';
 
@@ -22,6 +23,11 @@ class Greeting extends React.Component {
     }
   }
 
+  goHome(e){
+    e.stopPropagation();
+    hashHistory.replace("/");
+  }
+
   showArtist(e) {
     e.stopPropagation();
     hashHistory.replace("/artists");
@@ -34,7 +40,7 @@ class Greeting extends React.Component {
     return (
       <div>
         <header className="header-group">
-          <span className="header-logo">INK & COTTON</span>
+          <span onClick={this.goHome} className="header-logo">INK & COTTON</span>
         </header>
         <header className="header-group-sublinks">
           <span>Current User: {currentUser.username}</span>

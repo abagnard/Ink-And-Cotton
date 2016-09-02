@@ -9,9 +9,9 @@ export const fetchAllProducts = () => ({
   type: ProductConstants.FETCH_ALL_PRODUCTS
 });
 
-export const fetchSingleProduct = product => ({
+export const fetchSingleProduct = id => ({
   type: ProductConstants.FETCH_SINGLE_PRODUCT,
-  product
+  id
 });
 
 export const receiveAllProducts = products => ({
