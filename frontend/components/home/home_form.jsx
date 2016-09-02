@@ -1,8 +1,9 @@
 import React from 'react';
 import { hashHistory } from 'react-router';
 import Greeting from '../greeting/greeting_container';
+import Footer from '../footer/footer_container';
 import ProductIndex from '../product/product_index_container';
-import {ProductIndexItem} from '../product/product_index_item';
+import { ProductIndexItem } from '../product/product_index_item';
 
 
 class Home extends React.Component{
@@ -19,6 +20,7 @@ class Home extends React.Component{
       <div>
         < Greeting />
         {this.props.children}
+        < Footer />
       </div>
     );
   }

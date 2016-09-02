@@ -26,11 +26,11 @@ const mapStateToProps = (state, ownProps) => {
   let mediumRequested = ownProps.location.pathname.slice(1);
 
   if (mediumRequested === "inks") {
-    return {products: inkProducts(state), medium: mediumRequested};
+    return {products: inkProducts(state), medium: "Inks"};
   } else if (mediumRequested === "cottons"){
-    return {products: cottonProducts(state), medium: mediumRequested};
+    return {products: cottonProducts(state), medium: "Cottons"};
   } else if (mediumRequested === "all"){
-    return {products: allProducts(state), medium: mediumRequested};
+    return {products: allProducts(state), medium: "All Products"};
   }
 };
 

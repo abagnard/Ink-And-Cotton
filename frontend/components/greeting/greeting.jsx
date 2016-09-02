@@ -11,6 +11,11 @@ class Greeting extends React.Component {
     callback();
   }
 
+  handleLogout(e){
+    e.stopPropagation();
+    this.props.logout();
+  }
+
   componentWillReceiveProps(nextProps){
     if (!nextProps.currentUser) {
       hashHistory.push('/login');
@@ -22,15 +27,6 @@ class Greeting extends React.Component {
     hashHistory.replace("/artists");
   }
 
-  showInks(e){
-    e.stopPropagation();
-    hashHistory.replace("/inks");
-  }
-
-  showCottons(e){
-    e.stopPropagation();
-    hashHistory.replace("/cottons");
-  }
 
   render() {
     const {currentUser, logout} = this.props;
@@ -38,16 +34,16 @@ class Greeting extends React.Component {
     return (
       <div>
         <header className="header-group">
-          <span>Current User: {currentUser.username}</span>
-          <button className="header-logout" onClick={(e) => this.logoutPreventDefault(e, logout)}>Log Out</button>
           <span className="header-logo">INK & COTTON</span>
-          <button className="cart">Cart</button>
         </header>
         <header className="header-group-sublinks">
+          <span>Current User: {currentUser.username}</span>
+          <button className="header-logout" onClick={(e) => this.logoutPreventDefault(e, logout)}>Log Out</button>
           <span onClick={this.showArtist}>Artists</span>
           <Link to="/all">All</Link>
           <Link to="/inks">Inks</Link>
           <Link to="/cottons">Cottons</Link>
+          <button className="cart">Cart</button>
         </header>
         <div className="header-group-img"></div>
       </div>
