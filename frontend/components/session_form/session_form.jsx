@@ -54,6 +54,12 @@ class SessionForm extends React.Component {
 		);
 	}
 
+	clearErrors(){
+		return(
+			this.props.errors = []
+		);
+	}
+
 
 	navLink(login, signup){
 		if (this.props.formType === "login") {

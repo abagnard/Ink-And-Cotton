@@ -18,7 +18,6 @@ class Home extends React.Component{
 
       <div>
         < Greeting />
-        <span> HOME FORM UP </span>
         {this.props.children}
       </div>
     );

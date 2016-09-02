@@ -6,7 +6,7 @@ import SessionFormContainer from './session_form/session_form_container';
 import GreetingContainer from './greeting/greeting_container';
 import HomeContainer from './home/home_form_container';
 import ProductIndexContainer from './product/product_index_container';
-// import MediumIndexContainer from './product/medium_index_container';
+import MediumIndexContainer from './product/medium_index_container';
 import ProductDetailContainer from './product/product_detail_container';
 
 
@@ -48,6 +48,9 @@ class AppRouter extends React.Component{
           <Route component={ HomeContainer } onEnter={this._ensureLoggedIn}>
             <IndexRoute component={ ProductIndexContainer } />
             <Route path="/products/:id" component={ ProductDetailContainer }/>
+            <Route path="/inks" component={ MediumIndexContainer }/>
+            <Route path="/cottons" component={ MediumIndexContainer }/>
+            <Route path="/all" component={ MediumIndexContainer }/>
           </Route>
         </Route>
       </Router>
@@ -61,6 +64,3 @@ AppRouter.contextTypes = {
 };
 
 export default AppRouter;
-
-
-// <Route path="/products" component={ MediumIndexContainer }/>

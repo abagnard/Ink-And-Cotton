@@ -19,7 +19,7 @@ export class ProductIndex extends React.Component {
       <div>
         <div>
           <p className="new-products-title">New Ink</p>
-          <Link to="/">View All Ink</Link>
+          <Link to="/inks">View All Ink</Link>
             {this.props.inkProducts.map(product => (
               <ProductIndexItem key={product.id} product = {product}/>
             ))}
@@ -27,7 +27,7 @@ export class ProductIndex extends React.Component {
         <br />
         <div>
           <p className="new-products-title">New Cotton</p>
-          <Link to="/">View All Cotton</Link>
+          <Link to="/cottons">View All Cotton</Link>
             {this.props.cottonProducts.map(product => (
               <ProductIndexItem key={product.id} product = {product}/>
             ))}

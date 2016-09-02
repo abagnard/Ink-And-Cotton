@@ -24,12 +24,12 @@ class Greeting extends React.Component {
 
   showInks(e){
     e.stopPropagation();
-    hashHistory.replace("/products/inks");
+    hashHistory.replace("/inks");
   }
 
   showCottons(e){
     e.stopPropagation();
-    hashHistory.replace("/products/cottons");
+    hashHistory.replace("/cottons");
   }
 
   render() {
@@ -44,9 +44,10 @@ class Greeting extends React.Component {
           <button className="cart">Cart</button>
         </header>
         <header className="header-group-sublinks">
-            <span onClick={this.showArtist}>Artists</span>
-            <span onClick={this.showInks}>Ink</span>
-            <span onClick={this.showCottons}>Cotton</span>
+          <span onClick={this.showArtist}>Artists</span>
+          <Link to="/all">All</Link>
+          <Link to="/inks">Inks</Link>
+          <Link to="/cottons">Cottons</Link>
         </header>
         <div className="header-group-img"></div>
       </div>

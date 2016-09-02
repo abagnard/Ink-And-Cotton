@@ -22,17 +22,17 @@ const cottonProducts = state => {
 
 
 
-const mapStateToProps = (state, ownProps) => ({
-  const mediumRequested = ownProps.location.pathname.slice(1);
+const mapStateToProps = (state, ownProps) => {
+  let mediumRequested = ownProps.location.pathname.slice(1);
 
   if (mediumRequested === "inks") {
-    return {products: inkProducts(state)};
+    return {products: inkProducts(state), medium: mediumRequested};
   } else if (mediumRequested === "cottons"){
-    return {products: cottonProducts(state)};
-  } else {
-    return {products: allProducts(state)};
-  };
-});
+    return {products: cottonProducts(state), medium: mediumRequested};
+  } else if (mediumRequested === "all"){
+    return {products: allProducts(state), medium: mediumRequested};
+  }
+};
 
 const mapDispatchToProps = dispatch => ({
   fetchAllProducts: () => dispatch(fetchAllProducts()),

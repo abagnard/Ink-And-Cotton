@@ -5,7 +5,7 @@ import {ProductIndexItem} from './product_index_item';
 export class MediumIndex extends React.Component {
 
   constructor(props){
-		super(props);\
+		super(props);
   }
 
   componentDidMount() {
@@ -13,11 +13,10 @@ export class MediumIndex extends React.Component {
   }
 
 
-
   render() {
     return (
-      <div class="all-products">
-        <h2>{this.props.products[0].type}</h2>
+      <div className="all-products">
+        <h1>{this.props.medium}</h1>
         {this.props.products.map(product => (
           <ProductIndexItem key={product.id} product = {product}/>
         ))}
