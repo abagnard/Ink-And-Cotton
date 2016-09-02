@@ -22,19 +22,16 @@ const cottonProducts = state => {
 
 
 
-const mapStateToProps = state => ({
-  const formType = ownProps.location.pathname.slice(1);
-  const processForm = (formType === 'login') ? login : signup;
+const mapStateToProps = (state, ownProps) => ({
+  const mediumRequested = ownProps.location.pathname.slice(1);
 
-  return {
-    processForm: user => dispatch(processForm(user)),
-    formType
+  if (mediumRequested === "inks") {
+    return {products: inkProducts(state)};
+  } else if (mediumRequested === "cottons"){
+    return {products: cottonProducts(state)};
+  } else {
+    return {products: allProducts(state)};
   };
-
-
-  products: allProducts(state),
-  inkProducts: inkProducts(state),
-  cottonProducts: cottonProducts(state)
 });
 
 const mapDispatchToProps = dispatch => ({
@@ -42,4 +39,4 @@ const mapDispatchToProps = dispatch => ({
 });
 
 
-export default connect(mapStateToProps, mapDispatchToProps)(Medium);
+export default connect(mapStateToProps, mapDispatchToProps)(MediumIndex);

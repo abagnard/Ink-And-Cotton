@@ -6,6 +6,7 @@ import SessionFormContainer from './session_form/session_form_container';
 import GreetingContainer from './greeting/greeting_container';
 import HomeContainer from './home/home_form_container';
 import ProductIndexContainer from './product/product_index_container';
+// import MediumIndexContainer from './product/medium_index_container';
 import ProductDetailContainer from './product/product_detail_container';
 
 
@@ -60,3 +61,6 @@ AppRouter.contextTypes = {
 };
 
 export default AppRouter;
+
+
+// <Route path="/products" component={ MediumIndexContainer }/>

@@ -17,6 +17,21 @@ class Greeting extends React.Component {
     }
   }
 
+  showArtist(e) {
+    e.stopPropagation();
+    hashHistory.replace("/artists");
+  }
+
+  showInks(e){
+    e.stopPropagation();
+    hashHistory.replace("/products/inks");
+  }
+
+  showCottons(e){
+    e.stopPropagation();
+    hashHistory.replace("/products/cottons");
+  }
+
   render() {
     const {currentUser, logout} = this.props;
 
@@ -29,9 +44,9 @@ class Greeting extends React.Component {
           <button className="cart">Cart</button>
         </header>
         <header className="header-group-sublinks">
-            <Link to="/">Artists</Link>
-            <Link to="/">Ink</Link>
-            <Link to="/">Cotton</Link>
+            <span onClick={this.showArtist}>Artists</span>
+            <span onClick={this.showInks}>Ink</span>
+            <span onClick={this.showCottons}>Cotton</span>
         </header>
         <div className="header-group-img"></div>
       </div>
@@ -42,3 +57,10 @@ class Greeting extends React.Component {
 
 
 export default Greeting;
+
+
+// <header className="header-group-sublinks">
+//     <Link to="/">Artists</Link>
+//     <Link to="/">Ink</Link>
+//     <Link to="/">Cotton</Link>
+// </header>

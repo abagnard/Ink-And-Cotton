@@ -6,7 +6,11 @@ class SessionForm extends React.Component {
 		super(props);
 		this.state = {
 			username: "",
-			password: ""
+			password: "",
+			guestLogin: {
+				username: "guest",
+				password: "password"
+			}
 		};
 		this.handleSubmit = this.handleSubmit.bind(this);
 		this.handleGuestSubmit = this.handleGuestSubmit.bind(this);
@@ -34,8 +38,7 @@ class SessionForm extends React.Component {
 
 	handleGuestSubmit(e){
 		e.preventDefault();
-		const user = {username: "guest", password: "password"};
-		this.props.processForm({user});
+		this.props.login({user: this.state.guestLogin});
 	}
 
 
@@ -64,7 +67,9 @@ class SessionForm extends React.Component {
 					<Link to="/signup">Create Account</Link>
 					<br />
 					Sign in as guest:
-					<Link to="/">Guest</Link>
+					<button type="button" onClick={this.handleGuestSubmit}>
+						Guest
+					</button>
 				</div>
 			);
 		} else {
@@ -78,7 +83,9 @@ class SessionForm extends React.Component {
 					<Link to="/login">Sign In</Link>
 					<br />
 					Sign in as guest:
-					<Link to="/">Guest</Link>
+					<button type="button" onClick={this.handleGuestSubmit}>
+						Guest
+					</button>
 				</div>
 			);
 		}
