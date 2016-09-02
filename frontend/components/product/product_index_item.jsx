@@ -7,10 +7,6 @@ export class ProductIndexItem extends React.Component {
     this.showDetail = this.showDetail.bind(this);
   }
 
-  componentDidMount(product) {
-    this.props.fetchSingleProduct(product);
-  }
-
   showDetail(e) {
     e.stopPropagation();
     hashHistory.replace("/products/" + this.props.product.id);

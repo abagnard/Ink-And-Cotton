@@ -14,7 +14,6 @@ export class ProductIndex extends React.Component {
   }
 
 
-
   render() {
     return (
       <div>

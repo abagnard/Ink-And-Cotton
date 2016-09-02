@@ -2,7 +2,7 @@ import React from 'react';
 import {ProductIndexItem} from './product_index_item';
 
 
-export class CottonIndex extends React.Component {
+export class MediumIndex extends React.Component {
 
   constructor(props){
 		super(props);
