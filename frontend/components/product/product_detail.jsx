@@ -1,5 +1,6 @@
 import React from 'react';
 import { hashHistory } from 'react-router';
+import { Link } from 'react-router';
 import { ProductIndexItem } from './product_index_item';
 
 export class ProductDetail extends React.Component {
@@ -18,12 +19,16 @@ export class ProductDetail extends React.Component {
         <div>Loading...</div>
       );
     }
+
+    const itemArtistUrl = `/users/${this.props.product.artist_id}`;
+
     return (
       <div className="product-index-item">
         <h1 className="item-title">{this.props.product.title}</h1>
         <img src={this.props.product.img_url}/>
         <div className="product-index-item-details">
-          <p className="item-artist">artist: {this.props.product.artist.name}</p>
+          <Link to="/all">View All Products</Link>
+          <p className="item-artist">artist: <Link to={itemArtistUrl}>{this.props.product.artist.name}</Link></p>
           <p className="item-price">price: ${this.props.product.price}</p>
           <button>Add to cart</button>
           <br />

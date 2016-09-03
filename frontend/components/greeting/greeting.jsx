@@ -47,7 +47,7 @@ class Greeting extends React.Component {
           <button className="header-logout" onClick={(e) => this.logoutPreventDefault(e, logout)}>Log Out</button>
           <ul className="header-link-list">
             <li>
-              <span onClick={this.showArtist}>Artists</span>
+              <span>Artists</span>
               <ul>
                 <li><Link to="/users/10">ALEX INC</Link></li>
                 <li><Link to="/users/7">Colette Miller</Link></li>
