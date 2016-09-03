@@ -18,7 +18,12 @@ class User < ActiveRecord::Base
 
   after_initialize :ensure_session_token
 
-  has_many :products, dependent: :destroy
+  has_many :products,
+  foreign_key: :artist_id,
+  primary_key: :id,
+  class_name: :Product,
+  dependent: :destroy
+
   has_many :reviews, dependent: :destroy
   has_many :cart_items, dependent: :destroy
 

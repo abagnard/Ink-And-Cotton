@@ -49,11 +49,11 @@ class Greeting extends React.Component {
             <li>
               <span onClick={this.showArtist}>Artists</span>
               <ul>
-                <li><Link to="/alex-inc">ALEX INC</Link></li>
-                <li><Link to="/colette-miller">Colette Miller</Link></li>
-                <li><Link to="/maya-hayuk">Maya Hayuk</Link></li>
-                <li><Link to="/royal">Royal</Link></li>
-                <li><Link to="/wrdsmth">WRDSMTH</Link></li>
+                <li><Link to="/users/10">ALEX INC</Link></li>
+                <li><Link to="/users/7">Colette Miller</Link></li>
+                <li><Link to="/users/6">Maya Hayuk</Link></li>
+                <li><Link to="/users/9">Royal</Link></li>
+                <li><Link to="/users/8">WRDSMTH</Link></li>
               </ul>
             </li>
             <li><Link to="/all">All</Link></li>

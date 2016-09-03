@@ -5,6 +5,7 @@ import { fetchSingleProduct } from '../actions/product_actions';
 import SessionFormContainer from './session_form/session_form_container';
 import GreetingContainer from './greeting/greeting_container';
 import HomeContainer from './home/home_form_container';
+import UserContainer from './user/user_container';
 import ProductIndexContainer from './product/product_index_container';
 import MediumIndexContainer from './product/medium_index_container';
 import ProductDetailContainer from './product/product_detail_container';
@@ -47,6 +48,7 @@ class AppRouter extends React.Component{
           <Route path="/signup" component={ SessionFormContainer } onEnter={this._redirectIfLoggedIn}/>
           <Route component={ HomeContainer } onEnter={this._ensureLoggedIn}>
             <IndexRoute component={ ProductIndexContainer } />
+            <Route path="/users/:id" component={ UserContainer }/>
             <Route path="/products/:id" component={ ProductDetailContainer }/>
             <Route path="/inks" component={ MediumIndexContainer }/>
             <Route path="/cottons" component={ MediumIndexContainer }/>
@@ -65,6 +67,5 @@ AppRouter.contextTypes = {
 
 export default AppRouter;
 
-// <Route path="/artist/:id" component={ ArtistContainer }/>
 // <Route path="/about" component={ InfoContainer }/>
 // <Route path="/contact-us" component={ InfoContainer }/>
