@@ -73,7 +73,7 @@ class SessionForm extends React.Component {
 					<Link to="/signup">Create Account</Link>
 					<br />
 					Sign in as guest:
-					<button type="button" onClick={this.handleGuestSubmit}>
+					<button type="button" className="guest-button" onClick={this.handleGuestSubmit}>
 						Guest
 					</button>
 				</div>
@@ -89,7 +89,7 @@ class SessionForm extends React.Component {
 					<Link to="/login">Sign In</Link>
 					<br />
 					Sign in as guest:
-					<button type="button" onClick={this.handleGuestSubmit}>
+					<button type="button" className="guest-button" onClick={this.handleGuestSubmit}>
 						Guest
 					</button>
 				</div>
