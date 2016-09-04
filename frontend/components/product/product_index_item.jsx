@@ -16,10 +16,10 @@ export class ProductIndexItem extends React.Component {
   render() {
     const itemArtistUrl = `/users/${this.props.product.artist_id}`;
     return (
-      <div onClick={this.showDetail} className="product-index-item">
-        <img src={this.props.product.img_url} />
+      <div className="product-index-item">
+        <img src={this.props.product.img_url} onClick={this.showDetail}/>
         <div className="product-index-item-details">
-          <p className="item-title">{this.props.product.title}</p>
+          <p className="item-title" onClick={this.showDetail}>{this.props.product.title}</p>
           <p className="item-artist">ARTIST: <Link to={itemArtistUrl}>{this.props.product.artist.name}</Link></p>
           <p className="item-price">PRICE: ${this.props.product.price}</p>
         </div>
