@@ -61,6 +61,7 @@
 
 
 
+
   html, body, header, nav, h1, a,
   ul, li, strong, main, button, i,
   section, img, div, h2, p, form,
@@ -216,6 +217,7 @@
  .other-login-option input[type=submit] {
    border-radius: 4px;
    background: initial;
+   border-style: outset;
    margin-top: 10px;
    padding: 2px 13px;
    color: lightseagreen;
@@ -250,7 +252,7 @@
 }
 
 button.guest-button:hover {
-  color:darkblue;
+  color: dimgray;
 }
 
  .login-form span {
@@ -658,4 +660,10 @@ button.cart-button:hover {
 .inner-product-showpage {
     margin: 0 auto;
     width: inherit;
+}
+
+
+.other-login-option input:hover {
+    text-decoration: none;
+    border-style: inset;
 }
