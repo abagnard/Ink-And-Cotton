@@ -60,6 +60,7 @@
 
 
 
+
   html, body, header, nav, h1, a,
   ul, li, strong, main, button, i,
   section, img, div, h2, p, form,
@@ -191,6 +192,8 @@
    margin: 5px;
    font-size: 14px;
    padding: 2px;
+   font-variant: normal;
+   text-transform: initial;
  }
 
  .other-login-option ul {
