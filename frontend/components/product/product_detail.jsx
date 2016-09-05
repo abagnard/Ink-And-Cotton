@@ -23,18 +23,22 @@ export class ProductDetail extends React.Component {
     const itemArtistUrl = `/users/${this.props.product.artist_id}`;
 
     return (
-      <div className="product-index-item">
-        <h1 className="item-title">{this.props.product.title}</h1>
-        <img src={this.props.product.img_url}/>
-        <div className="product-index-item-details">
-          <Link to="/all">View All Products</Link>
-          <p className="item-artist">artist: <Link to={itemArtistUrl}>{this.props.product.artist.name}</Link></p>
-          <p className="item-price">price: ${this.props.product.price}</p>
-          <button>Add to cart</button>
-          <br />
-          <div className="item-description">
-            <h5>Details</h5>
-            <p className="item-description">{this.props.product.description}</p>
+      <div className="product-showpage">
+        <div className="inner-product-showpage">
+          <div className="showpage-links">
+            <a href="javascript: history.go(-1)">Go Back</a>
+          </div>
+          <img src={this.props.product.img_url}/>
+          <div className="product-showpage-details">
+            <p className="showpage-item-title">{this.props.product.title}</p>
+            <p className="showpage-item-artist">artist: <Link to={itemArtistUrl}>{this.props.product.artist.name}</Link></p>
+            <p className="showpage-item-price">price: ${this.props.product.price}</p>
+            <button className="cart-button">Add to cart</button>
+            <br />
+            <div className="item-description">
+              <span>details</span>
+              <p className="item-description">{this.props.product.description}</p>
+            </div>
           </div>
         </div>
       </div>

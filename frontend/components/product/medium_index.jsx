@@ -15,12 +15,16 @@ export class MediumIndex extends React.Component {
 
   render() {
     return (
-      <div className="all-products">
-        <h1>{this.props.medium}</h1>
-        <a href="javascript: history.go(-1)">Back</a>
-        {this.props.products.map(product => (
-          <ProductIndexItem key={product.id} product = {product}/>
-        ))}
+      <div className="showpage-container">
+        <div className="showpage-header">
+          <p className="new-products-title">{this.props.medium}</p>
+          <p><a href="javascript: history.go(-1)">Go Back</a></p>
+        </div>
+        <div className="all-products">
+          {this.props.products.map(product => (
+            <ProductIndexItem key={product.id} product = {product}/>
+          ))}
+        </div>
       </div>
     );
   }

@@ -37,13 +37,38 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   html, body, header, nav, h1, a,
   ul, li, strong, main, button, i,
   section, img, div, h2, p, form,
   fieldset, label, input, textarea,
   span, article, footer, time, small {
     box-sizing: border-box;
-    font-family: sans-serif
+    font-family: sans-serif;
+    font-variant: small-caps;
+    text-transform: uppercase;
   }
 
   html, body {
@@ -52,11 +77,24 @@
   }
 
   ul {
+    color: dimgrey;
     list-style-type: none;
+    text-decoration: none;
+    font-variant: small-caps;
+    text-transform: lowercase;
+  }
+
+  a {
+    text-decoration: none;
+    cursor: pointer;
+    font-variant: small-caps;
+    text-transform: lowercase;
+    color: dimgrey;
   }
 
   img {
     display: block;
+    cursor: pointer;
   }
 
   input[type="submit"],
@@ -65,11 +103,14 @@
     appearance: none;
     outline: none;
     cursor: pointer;
+    font-variant: small-caps;
+    text-transform: lowercase;
   }
 
   input[type="submit"]:hover,
-  button:hover {
-    color: darkcyan;
+  button[type="button"]:hover, li a:hover, li:hover, ul:hover {
+    color: lightseagreen;
+    text-decoration: underline;
   }
 
   button:focus, Link:focus, input[type="submit"]:focus {
@@ -86,9 +127,6 @@
 
 
 
-
-
-
  * {
  }
 
@@ -99,7 +137,6 @@
 
  .login-background {
    background-image: url("http://mayahayuk.com/dev/files/projects/chem-trails-2013/mayaHayuk.CHEMTRAILS.MIAMI.2584.jpg");
-   /* background-repeat: no-repeat; */
    background-size: 100%, 100%;
    position: absolute;
    top: 0;
@@ -109,14 +146,17 @@
  }
 
  .header-logo{
-   font-size: 40px;
+   text-transform: lowercase;
+   font-variant: none;
+   font-size: 50px;
    font-weight: bold;
    text-align: center;
    border: 6px solid black;
    padding: 5px 20px 5px 20px;
-   /* display: flex; */
    position: inherit;
    width: 40%;
+   white-space: nowrap;
+   margin: auto;
  }
 
 
@@ -129,14 +169,14 @@
 
 
  .login-form-box{
-   min-width: 420px;
+   min-width: 500px;
    min-height: 350px;
    margin: auto;
    padding: 65px 40px 40px 40px;
    background: whitesmoke;
    /* opacity: .9; */
    border-radius: 5px;
-   border: 1px solid black;
+   border: 2px solid black;
    text-align: center;
  }
 
@@ -158,52 +198,72 @@
    list-style-type: none;
    color: red;
    font-weight: bold;
+   text-transform: none;;
+   font-variant: none;
  }
 
  ul {
-   display: block;
-   padding: 0;
-   font-size: 18px;
-   margin-top: 5px;
-   margin-bottom: 0;
+   /* display: block; */
+   /* padding: 0; */
+   /* font-size: 18px; */
+   /* margin-top: 5px; */
+   /* margin-bottom: 0; */
  }
 
  .other-login-option input[type=submit] {
    border-radius: 4px;
-   background: lightgrey;
+   background: initial;
    margin-top: 10px;
-   padding: 5px 10px;
-   color: blueviolet;
-   font-size: 14px;
-   font-weight: bold;
+   padding: 2px 13px;
+   color: lightseagreen;
+   font-size: 33px;
+   /* font-weight: bold; */
+   text-transform: lowercase;
+   font-variant: small-caps;
  }
 
+.other-login-option a:hover, input[type=submit]:hover {
+  color: dimgray;
+}
 
  .other-login-option a {
    margin-left: 5px;
-   color: blueviolet;
+   color: lightseagreen;
+   text-decoration: underline;
+   text-transform: lowercase;
+   font-variant: small-caps;
  }
 
  button.guest-button {
-    color: blueviolet;
-    font-size: 14px;
+    color: lightseagreen;
+    font-size: 18px;
     margin-top: 2px;
     text-decoration: underline;
     background: whitesmoke;
     border-color: whitesmoke;
     border-style: none;
+    text-transform: lowercase;
+    font-variant: small-caps;
 }
 
- span {
-     font-size: 18px;
+button.guest-button:hover {
+  color:darkblue;
+}
+
+ .login-form span {
+     font-size: 22px;
+     text-transform: lowercase;
+     font-variant: small-caps;
  }
 
  .header-group {
      display: inline-block;
      background: white;
      width: 100%;
-     padding-top: 45px;
-     padding-bottom: 50px;
+     text-align: center;
+     padding-top: 75px;
+     padding-bottom: 80px;
+     border-bottom: 1px solid black;
      background-image: url("http://mayahayuk.com/dev/files/projects/chem-trails-2013/mayaHayuk.CHEMTRAILS.MIAMI.2584.jpg");
  }
 
@@ -211,41 +271,47 @@
  .product-index-item img {
      height: 320px;
      width: inherit;
+     margin: auto;
  }
 
  .new-products-title {
-     font-size: 25px;
-     /* border-bottom: 2px solid black; */
+     text-transform: none;
+     font-size: 50px;
+     /* font-weight: bold; */
      text-align: center;
-     margin-bottom: 0;
-     font-weight: bold;
+     padding: 5px 30px 0px 30px;
+     position: inherit;
+     width: 100%;
+     margin: auto;
+     white-space: nowrap;
  }
 
  .item-title {
      margin: 0 auto;
      font-weight: bold;
+     font-size: 26px;
+     margin-bottom: -5px;
+     cursor: pointer;
+     text-transform: lowercase;
  }
 
  .item-artist {
      margin: 0 auto;
-     font-size: 14px;
+     font-size: 18px;
+     margin-bottom: -2px;
+     font-variant: inherit;
+     text-transform: lowercase;
  }
 
  .item-price {
      margin: 0 auto;
-     font-size: 14px;
+     font-size: 17px;
+     text-transform: lowercase;
+     font-variant: inherit;
  }
 
  button.cart{
-  background: turquoise;
-  color: black;
-  display: flex;
   float: right;
-  font-size: 20px;
-  margin:  auto;
-  border-color: seagreen;
-  border-radius: 5px;
-  border-style: outset;
 }
 
 
@@ -253,43 +319,340 @@
     height: 100%;
 }*/
 
-.header-group .header-logo {
-    float: initial;
-    background: whitesmoke;
+
+span#home-logo {
+  cursor: pointer;
+  background: whitesmoke;
+  font-size: 50px;
+  text-transform: lowercase;
+}
+
+span#home-logo {}
+span#home-logo:hover {
+  color: lightseagreen;
+  border-color: lightseagreen;
 }
 
 
 header.header-group-sublinks {
     width: 100%;
-    padding-top: 15px;
-    padding-bottom: 15px;
-    border-top: 1px solid lightgray;
-    border-bottom: 1px solid lightgray;
+    color: dimgray;
+    padding: 15px;
+    border-bottom: 2px solid lightgray;
+    margin: 0;
+    display: inline-flex;
 }
 
-.header-group-sublinks a {
-    text-align: center;
-    color: slategray;
-    margin-left: 50px;
+header.header-sub-link-list {
+  width: 100%;
+}
+
+
+.header-link-list {
+  color: dimgray;
+  /* border: 1px solid black; */
+  display: inline-block;
+  margin: auto;
+  position: relative;
+  z-index: 1;
+  padding: 0;
+  white-space: nowrap;
+}
+
+.header-link-list:hover {
+  color: lightseagreen;
+}
+
+.header-sub-link-list {
+  position: absolute;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0;
+}
+
+.header-link-list > li ul {
+  color: dimgrey;
+  font-variant: small-caps;
+  display: none;
+}
+
+.header-link-list > li:hover ul {
+  display: block;
+  color: darkblue;
 }
 
 button.header-logout {
-    color: blueviolet;
-    font-size: 16px;
-    padding: 5px;
-    background: whitesmoke;
-    border-color: whitesmoke;
     text-align: left;
-    border-style: hidden;
 }
 
-.header-group-img {
+button.header-logout:hover{
+  color: lightseagreen;
+  border-style: inset;
+}
+
+.footer-group-img {
     width: 100%;
-    height: 20px;
+    height: 60px;
+    border-top: 1px solid black;
     background-image: url("http://mayahayuk.com/dev/files/projects/chem-trails-2013/mayaHayuk.CHEMTRAILS.MIAMI.2584.jpg");
   }
 
 
 .other-login-option {
-    font-size: 14px;
+    font-size: 18px;
+    text-transform: lowercase;
+    font-variant: small-caps;
+}
+
+
+p.footer-header {
+    font-size: 10px;
+    width: 100%;
+    height: 20px;
+    position: absolute;
+    margin: 25px auto;
+    text-align: center;
+}
+
+footer.footer.group {
+    text-align: center;
+    margin-top: 20px;
+    border-top: 2px solid lightgray;
+}
+
+ul.footer-link-list {
+    text-align: center;
+    display: inline-block;
+}
+
+.footer-link-list > li {
+    font-size: 15px;
+    display: inline-block;
+}
+
+
+.footer-link-list > li > a {
+    margin: 30px;
+    color: dimgray;
+    font-size: 20px;
+}
+
+
+ul.header-link-list:hover {
+    color: darkblue;
+}
+
+
+.product-index-item-details {
+}
+
+.product-index-item {
+    display: inline-block;
+    margin: 20px 20px 2%;
+    text-align: center;
+}
+
+.showpage-container {
+    margin: auto;
+    position: relative;
+}
+
+
+.all-products {
+    text-align: center;
+}
+
+.item-artist a {color: black;}
+
+.item-artist a:hover {
+    color: lightseagreen;
+}
+
+.item-title:hover {
+    color: lightseagreen;
+    text-decoration: underline;
+}
+
+.item-artist a:hover {
+    text-decoration: underline;
+}
+
+
+.footer-link-list > li > a:hover {
+    color: lightseagreen;
+}
+
+.showpage-container p a {font-size: 20px;text-align: center;margin: 0px auto;margin-bottom: 20px;text-transform: inherit;font-variant: small-caps;}
+
+
+.showpage-header {
+    margin-top: 15px;
+    border-bottom: 2px solid lightgray;
+    padding-bottom: 10px;
+    text-align: center;
+}
+
+.showpage-container p {
+    margin-top: 0;
+}
+
+
+.product-showpage img {
+    height: 450px;
+    /* width: inherit; */
+    display: inline-block;
+    position: relative;
+}
+
+.product-showpage {
+    margin: 20px 35px auto;
+}
+
+.showpage-links {float: left;margin-bottom: 10px;width: 100%;}
+
+.product-showpage-details {
+    margin: 10px 30px;
+    display: inline-block;
+    position: absolute;
+    width: 400px;
+}
+
+p.showpage-item-title {
+    margin: auto;
+    margin-bottom: 20px;
+    text-align: center;
+    text-transform: initial;
+    font-size: 50px;
+    text-align: center;
+    width: 100%;
+}
+
+p.showpage-item-artist {
+    margin: 0;
+    font-size: 30px;
+    color: black;
+    text-transform: lowercase;
+    font-variant: small-caps;
+}
+
+p.showpage-item-price {
+    margin: 0;
+    font-size: 30px;
+    text-transform: lowercase;
+    font-variant: small-caps;
+    margin-bottom: 25px;
+}
+
+.item-description span {
+    text-align: center;
+    font-size: 25px;
+    margin: 20px 0px;
+    width: 20%;
+    text-transform: lowercase;
+    font-variant: small-caps;
+}
+
+p.item-description {
+    width: 76%;
+    float: right;
+    margin: 3px 0  auto;
+    font-size: 22px;
+    text-transform: lowercase;
+    font-variant: small-caps;
+}
+
+
+.header-link-list > li {
+    font-size: 22px;
+    font-weight: normal;
+    text-transform: lowercase;
+    padding: 0px 25px;
+    border-left: 1px solid dimgray;
+}
+
+.header-link-list > li:first-child {
+    border-left-color: white;
+}
+
+.showpage-container p a:hover {
+    color: lightseagreen;
+    text-decoration: underline;
+}
+
+.product-showpage-details button {
+    background: lightseagreen;
+    border: lightseagreen;
+    border-radius: 5px;
+    font-size: 24px;
+    margin: 30px auto;
+    padding: 5px;
+    text-align: center;
+    display: inherit;
+    width: 80%;
+    font-weight: bold;
+    color: darkslategrey;
+    border-style: outset;
+}
+
+.product-showpage-details p a {
+    color: black;
+}
+
+.product-showpage-details p a:hover {
+    color: lightseagreen;
+    text-decoration: underline;
+}
+
+.product-showpage a:hover {
+    color: lightseagreen;
+    text-decoration: underline;
+}
+
+.showpage-links a {font-size: 18px;margin-bottom: 10px;}
+
+
+.header-group-sublinks button {
+    height: 100%;
+    margin: 0px;
+    border-style: outset;
+    color: dimgray;
+    font-size: 22px;
+    padding: 5px;
+    background: white;
+    border-color: lightgray;
+    border-radius: 5px;
+    white-space: nowrap;
+}
+
+button.cart:hover {
+    color: lightseagreen;
+    border-style: inset;
+}
+
+
+span.badge {
+    font-size: 16px;
+    padding-left: 4px;
+}
+
+.showpage-header p a {
+    font-size: 16px;
+    text-align: center;
+    margin: 0px auto;
+    margin-bottom: 20px;
+    text-transform: inherit;
+    font-variant: small-caps;
+}
+
+
+button.cart-button:hover {
+    border-style: inset;
+    font-weight: bold;
+    color: black;
+}
+
+
+.inner-product-showpage {
+    margin: 0 auto;
+    width: inherit;
 }

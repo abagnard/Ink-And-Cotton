@@ -40,25 +40,25 @@ class Greeting extends React.Component {
     return (
       <div>
         <header className="header-group">
-          <span onClick={this.goHome} className="header-logo">INK & COTTON</span>
+          <span onClick={this.goHome} className="header-logo" id="home-logo">Ink & Cotton</span>
         </header>
         <header className="header-group-sublinks">
-          <span>Current User: {currentUser.username}</span>
-          <button className="header-logout" onClick={(e) => this.logoutPreventDefault(e, logout)}>Log Out</button>
+          <button className="header-logout" onClick={(e) => this.logoutPreventDefault(e, logout)}>log out</button>
           <ul className="header-link-list">
-            <li>
-              <span>Artists</span>
-              <ul>
-                <li><Link to="/users/7">ALEX INC</Link></li>
-                <li><Link to="/users/4">Colette Miller</Link></li>
-                <li><Link to="/users/3">Maya Hayuk</Link></li>
-                <li><Link to="/users/6">Royal</Link></li>
-                <li><Link to="/users/5">WRDSMTH</Link></li>
-              </ul>
+            <li className="header-link-list">artists
+              <header className="header-sub-link-list">
+                <ul>
+                  <li><Link to="/users/7">ALEX INC</Link></li>
+                  <li><Link to="/users/4">Colette Miller</Link></li>
+                  <li><Link to="/users/3">Maya Hayuk</Link></li>
+                  <li><Link to="/users/6">Royal</Link></li>
+                  <li><Link to="/users/5">WRDSMTH</Link></li>
+                </ul>
+              </header>
             </li>
-            <li><Link to="/all">All</Link></li>
-            <li><Link to="/inks">Inks</Link></li>
-            <li><Link to="/cottons">Cottons</Link></li>
+            <li className="header-link-list"><Link to="/all">all</Link></li>
+            <li className="header-link-list"><Link to="/inks">inks</Link></li>
+            <li className="header-link-list"><Link to="/cottons">cottons</Link></li>
           </ul>
           <button className="cart">Cart<span className="badge">3</span></button>
         </header>

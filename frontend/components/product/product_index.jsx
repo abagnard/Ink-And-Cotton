@@ -17,20 +17,28 @@ export class ProductIndex extends React.Component {
   render() {
     return (
       <div>
-        <div>
-          <p className="new-products-title">New Ink</p>
-          <Link to="/inks">View All Ink</Link>
+        <div className="showpage-container">
+          <div className="showpage-header">
+            <p className="new-products-title">New Inks</p>
+            <p><Link to="/inks">View All Inks</Link></p>
+          </div>
+          <div className="all-products">
             {this.props.inkProducts.map(product => (
               <ProductIndexItem key={product.id} product = {product}/>
             ))}
+          </div>
         </div>
         <br />
-        <div>
-          <p className="new-products-title">New Cotton</p>
-          <Link to="/cottons">View All Cotton</Link>
+        <div className="showpage-container">
+          <div className="showpage-header">
+            <p className="new-products-title">New Cottons</p>
+            <p><Link to="/cottons">View All Cottons</Link></p>
+          </div>
+          <div className="all-products">
             {this.props.cottonProducts.map(product => (
               <ProductIndexItem key={product.id} product = {product}/>
             ))}
+          </div>
         </div>
       </div>
     );

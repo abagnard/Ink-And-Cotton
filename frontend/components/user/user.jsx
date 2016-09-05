@@ -16,13 +16,16 @@ export class UserIndex extends React.Component {
   render() {
 
     return (
-      <div>
-        <div> WE ARE ON THE ARTIST PAGE!</div>
-        <p className="new-products-title">{this.props.user.name}</p>
-        <Link to="/all">View All Products</Link>
-          {this.props.products.map(product => (
-            <ProductIndexItem key={product.id} product = {product}/>
-          ))}
+      <div className="showpage-container">
+        <div className="showpage-header">
+          <p className="new-products-title">{this.props.user.name}</p>
+          <p><a href="javascript: history.go(-1)">Go Back</a></p>
+        </div>
+        <div className="all-products">
+            {this.props.products.map(product => (
+              <ProductIndexItem key={product.id} product = {product}/>
+            ))}
+        </div>
       </div>
     );
   }
