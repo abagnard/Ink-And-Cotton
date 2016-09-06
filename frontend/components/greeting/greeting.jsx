@@ -46,15 +46,13 @@ class Greeting extends React.Component {
           <button className="header-logout" onClick={(e) => this.logoutPreventDefault(e, logout)}>log out</button>
           <ul className="header-link-list">
             <li className="header-link-list">artists
-              <header className="header-sub-link-list">
-                <ul>
+                <ul className="header-sub-link-list">
                   <li><Link to="/users/7">ALEX INC</Link></li>
                   <li><Link to="/users/4">Colette Miller</Link></li>
                   <li><Link to="/users/3">Maya Hayuk</Link></li>
                   <li><Link to="/users/6">Royal</Link></li>
                   <li><Link to="/users/5">WRDSMTH</Link></li>
                 </ul>
-              </header>
             </li>
             <li className="header-link-list"><Link to="/all">all</Link></li>
             <li className="header-link-list"><Link to="/inks">inks</Link></li>

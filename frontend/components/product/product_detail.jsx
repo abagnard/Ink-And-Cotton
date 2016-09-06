@@ -2,21 +2,52 @@ import React from 'react';
 import { hashHistory } from 'react-router';
 import { Link } from 'react-router';
 import { ProductIndexItem } from './product_index_item';
+import { ReviewIndexItem } from '../review/review_index_item';
 
 export class ProductDetail extends React.Component {
 
   constructor(props){
     super(props);
+    this.handleReview = this.handleReview.bind(this);
   }
 
   componentDidMount(){
     this.props.fetchSingleProduct(this.props.params.id);
   }
 
+  componentWillReceiveProps(nextProps){
+    this.props.fetchSingleProduct(nextProps.params.id);
+  }
+
+  handleReview(e){
+    e.stopPropagation();
+    hashHistory.replace("/products/" + this.props.params.id + "/review");
+  }
+
+  showReviews(){
+    let reviews = this.props.product.reviews;
+    if(reviews === undefined) {
+      reviews = [];
+    }
+    if (reviews.length < 1) {
+        return(
+          <div>no reviews have been created yet for this item</div>
+        );
+      }
+    return(
+      <div className="all-reviews">
+        <p>Printing</p>
+        {reviews.map(review => (
+          <ReviewIndexItem key={review.id} review = {review}/>
+        ))}
+      </div>
+    );
+  }
+
   render() {
     if (!this.props.product) {
       return (
-        <div>Loading...</div>
+        <div>Fetching products...</div>
       );
     }
 
@@ -39,6 +70,13 @@ export class ProductDetail extends React.Component {
               <span>details</span>
               <p className="item-description">{this.props.product.description}</p>
             </div>
+          </div>
+          <br/>
+          <div className="review-showpage">
+            <span>reviews</span>
+            <button className="review-button" onClick={this.handleReview}>Create Review</button>
+            {this.props.children}
+            {this.showReviews()}
           </div>
         </div>
       </div>

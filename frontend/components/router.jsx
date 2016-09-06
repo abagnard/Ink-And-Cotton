@@ -9,6 +9,8 @@ import UserContainer from './user/user_container';
 import ProductIndexContainer from './product/product_index_container';
 import MediumIndexContainer from './product/medium_index_container';
 import ProductDetailContainer from './product/product_detail_container';
+import ReviewFormContainer from './review/review_form_container';
+
 
 
 
@@ -49,7 +51,9 @@ class AppRouter extends React.Component{
           <Route component={ HomeContainer } onEnter={this._ensureLoggedIn}>
             <IndexRoute component={ ProductIndexContainer } />
             <Route path="/users/:id" component={ UserContainer }/>
-            <Route path="/products/:id" component={ ProductDetailContainer }/>
+            <Route path="/products/:id" component={ ProductDetailContainer }>
+               <Route path="review" component={ ReviewFormContainer } onEnter={this._ensureLoggedIn}/>
+            </Route>
             <Route path="/inks" component={ MediumIndexContainer }/>
             <Route path="/cottons" component={ MediumIndexContainer }/>
             <Route path="/all" component={ MediumIndexContainer }/>

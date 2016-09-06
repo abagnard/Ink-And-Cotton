@@ -62,6 +62,10 @@
 
 
 
+
+
+
+
   html, body, header, nav, h1, a,
   ul, li, strong, main, button, i,
   section, img, div, h2, p, form,
@@ -84,6 +88,7 @@
     text-decoration: none;
     font-variant: small-caps;
     text-transform: lowercase;
+    padding: 0;
   }
 
   a {
@@ -342,10 +347,14 @@ span#home-logo:hover {
 header.header-group-sublinks {
     width: 100%;
     color: dimgray;
-    padding: 15px;
+    /* padding: 15px; */
     border-bottom: 2px solid lightgray;
     margin: 0;
-    display: inline-flex;
+    display: flex;
+    position: relative;
+    justify-content: space-around;
+    align-items: center;
+    background: white;
 }
 
 header.header-sub-link-list {
@@ -357,11 +366,10 @@ header.header-sub-link-list {
   color: dimgray;
   /* border: 1px solid black; */
   display: inline-block;
-  margin: auto;
-  position: relative;
-  z-index: 1;
+  /* z-index: 1; */
   padding: 0;
   white-space: nowrap;
+  margin: 0;
 }
 
 .header-link-list:hover {
@@ -370,20 +378,28 @@ header.header-sub-link-list {
 
 .header-sub-link-list {
   position: absolute;
+  top: 0px;
+  left: 0px;
   width: 100%;
   margin: 0 auto;
-  padding: 0;
+  background: #ccc;
+  transition: all 1s ease;
+  height: 60px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  z-index: -1;
 }
 
 .header-link-list > li ul {
   color: dimgrey;
   font-variant: small-caps;
-  display: none;
 }
 
-.header-link-list > li:hover ul {
-  display: block;
-  color: darkblue;
+.header-link-list > li:hover ul {top: 70px;}
+
+.header-link-list > li:hover .product-showpage {
+  padding-top: 70px;
 }
 
 button.header-logout {
@@ -510,7 +526,8 @@ ul.header-link-list:hover {
 }
 
 .product-showpage {
-    margin: 20px 35px auto;
+    margin: 50px 35px auto;
+    transition: all 1s ease;
 }
 
 .showpage-links {float: left;margin-bottom: 10px;width: 100%;}
@@ -571,7 +588,7 @@ p.item-description {
     font-size: 22px;
     font-weight: normal;
     text-transform: lowercase;
-    padding: 0px 25px;
+    padding: 22px 25px;
     border-left: 1px solid dimgray;
 }
 
@@ -666,4 +683,9 @@ button.cart-button:hover {
 .other-login-option input:hover {
     text-decoration: none;
     border-style: inset;
+}
+
+
+.header-sub-link-list li {
+    /* margin-right: 20px; */
 }

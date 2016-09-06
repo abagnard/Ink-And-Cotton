@@ -25,6 +25,8 @@ class Product < ActiveRecord::Base
   has_many :reviews, dependent: :destroy
   has_many :cart_items, dependent: :destroy
 
-
+  def average_rating
+    reviews.average(:rating)
+  end
 
 end
