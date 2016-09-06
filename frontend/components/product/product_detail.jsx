@@ -31,7 +31,7 @@ export class ProductDetail extends React.Component {
     }
     if (reviews.length < 1) {
         return(
-          <div>no reviews have been created yet for this item</div>
+          <div>--there are no customer reviews yet--</div>
         );
       }
     return(

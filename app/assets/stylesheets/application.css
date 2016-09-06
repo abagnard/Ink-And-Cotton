@@ -73,6 +73,7 @@
 
 
 
+
   html, body, header, nav, h1, a,
   ul, li, strong, main, button, i,
   section, img, div, h2, p, form,
@@ -391,7 +392,7 @@ header.header-sub-link-list {
   margin: 0 auto;
   background: #ccc;
   transition: all 1s ease;
-  height: 60px;
+  height: 50px;
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -403,7 +404,7 @@ header.header-sub-link-list {
   font-variant: small-caps;
 }
 
-.header-link-list > li:hover ul {top: 70px;}
+.header-link-list > li:hover ul {top: 54px;}
 
 .header-link-list > li:hover .product-showpage {
   padding-top: 70px;
@@ -514,9 +515,9 @@ ul.header-link-list:hover {
 
 
 .showpage-header {
-    margin-top: 15px;
+    margin-top: 45px;
     border-bottom: 2px solid lightgray;
-    padding-bottom: 10px;
+    padding-bottom: 20px;
     text-align: center;
 }
 
@@ -594,12 +595,13 @@ p.item-description {
     font-size: 22px;
     font-weight: normal;
     text-transform: lowercase;
-    padding: 22px 25px;
-    border-left: 1px solid dimgray;
+    padding: 15px 2px;
+    /* border-left: 1px solid dimgray; */
 }
 
 .header-link-list > li:first-child {
-    border-left-color: white;
+    /* border-left-color: white; */
+    padding-right: 20px;
 }
 
 .showpage-container p a:hover {
@@ -708,9 +710,6 @@ button.cart-button:hover {
     display: inline-block;
 }
 
-.review-showpage {
-}
-
 .all-reviews {height: inherit;margin: 0 auto;width: 50%;}
 
 .review-category span {
@@ -732,7 +731,7 @@ button.review-button {
     font-size: 18px;
 }
 
-.review-title {font-size: 24px;font-weight: bold;margin-bottom: -3px;}
+.review-title {font-size: 24px;font-weight: bold;margin-bottom: -3px;color: black;}
 
 
 .review-index-item {
@@ -740,13 +739,14 @@ button.review-button {
 }
 
 .review-author {
-    color: dimgray;
+    color: lightseagreen;
     font-size: 16px;
     margin-bottom: 3px;
 }
 
 .review-comment {
     font-size: 18px;
+    color: black;
 }
 
 
@@ -829,4 +829,17 @@ button.cancel-button {
 button.submit-button {
     /* position: absolute; */
     /* left: 0; */
+}
+
+.review-showpage div {
+    width: 400px;
+    text-align: center;
+    margin: 0 auto;
+    color: lightseagreen;
+    margin-bottom: 10px;
+}
+
+.header-link-list a {
+    border-left: 1px solid dimgray;
+    padding: 0px 20px;
 }
