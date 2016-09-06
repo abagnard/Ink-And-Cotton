@@ -36,7 +36,6 @@ export class ProductDetail extends React.Component {
       }
     return(
       <div className="all-reviews">
-        <p>Printing</p>
         {reviews.map(review => (
           <ReviewIndexItem key={review.id} review = {review}/>
         ))}
@@ -73,7 +72,7 @@ export class ProductDetail extends React.Component {
           </div>
           <br/>
           <div className="review-showpage">
-            <span>reviews</span>
+            <span className="review-header">reviews</span>
             <button className="review-button" onClick={this.handleReview}>Create Review</button>
             {this.props.children}
             {this.showReviews()}

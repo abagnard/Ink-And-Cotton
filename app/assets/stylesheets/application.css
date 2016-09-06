@@ -66,6 +66,13 @@
 
 
 
+
+
+
+
+
+
+
   html, body, header, nav, h1, a,
   ul, li, strong, main, button, i,
   section, img, div, h2, p, form,
@@ -527,7 +534,6 @@ ul.header-link-list:hover {
 
 .product-showpage {
     margin: 50px 35px auto;
-    transition: all 1s ease;
 }
 
 .showpage-links {float: left;margin-bottom: 10px;width: 100%;}
@@ -688,4 +694,139 @@ button.cart-button:hover {
 
 .header-sub-link-list li {
     /* margin-right: 20px; */
+}
+
+
+.review-category {
+    display: inline-block;
+    vertical-align: top;
+}
+
+
+.review-content {
+    width: 470px;
+    display: inline-block;
+}
+
+.review-showpage {
+}
+
+.all-reviews {height: inherit;margin: 0 auto;width: 50%;}
+
+.review-category span {
+    display: block;
+    margin: 5px;
+    font-size: 20px;
+    width: 100px;
+    text-transform: lowercase;
+    font-weight: bold;
+}
+
+.review-content span {
+    display: block;
+    text-transform: lowercase;
+}
+
+button.review-button {
+    float: right;
+    font-size: 18px;
+}
+
+.review-title {font-size: 24px;font-weight: bold;margin-bottom: -3px;}
+
+
+.review-index-item {
+    margin-top: 15px;
+}
+
+.review-author {
+    color: dimgray;
+    font-size: 16px;
+    margin-bottom: 3px;
+}
+
+.review-comment {
+    font-size: 18px;
+}
+
+
+.review-header {
+    justify-content: center;
+    display: flex;
+    margin: 30px 0px 15px 0px;
+    font-size: 26px;
+    padding: 5px 0px;
+    border-top: 1px solid dimgray;
+    border-bottom: 1px solid dimgray;
+}
+
+.review-form > label {}
+
+.review-form form {margin: 0;display: flex;}
+
+.review-form {
+    margin: 0 auto;
+    display: flex;
+    width: 100%;
+}
+
+label.review-showpage {
+}
+
+
+.review-form input[type="text"], input[type="number"], textarea {
+    width: 300px;
+    height: 25px;
+    font-size: 14px;
+}
+
+.review-label-form label {
+    margin: 12px 0px auto;
+    display: block;
+    width: 100px;
+}
+
+.review-form button {
+    font-size: 12px;
+    height: 20px;
+    /* position: absolute; */
+    float: right;
+    display: list-item;
+}
+
+
+.review-label-form {
+    width: 100px;
+    /* position: absolute; */
+    left: 0;
+    display: inline-block;
+    text-align: center;
+    float: left;
+}
+
+.reivew-form-content {
+    margin: 8px 0px;
+    width: 300px;
+    text-align: center;
+}
+
+.reivew-form-content input[type="text"], input[type="number"], textarea {
+    margin: 2px;
+}
+
+.review-form-buttons {
+    float: right;
+    margin-top: 30px;
+    position: relative;
+    margin-left: 40px;
+}
+
+button.cancel-button {
+    float: right;
+    position: absolute;
+}
+
+button.submit-button {
+    /* position: absolute; */
+    /* left: 0; */
 }
