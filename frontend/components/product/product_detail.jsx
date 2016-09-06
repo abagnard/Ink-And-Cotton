@@ -31,7 +31,7 @@ export class ProductDetail extends React.Component {
     }
     if (reviews.length < 1) {
         return(
-          <div>--there are no customer reviews yet--</div>
+          <div className="no-reviews">--there are no customer reviews yet--</div>
         );
       }
     return(
@@ -63,12 +63,11 @@ export class ProductDetail extends React.Component {
             <p className="showpage-item-title">{this.props.product.title}</p>
             <p className="showpage-item-artist">artist: <Link to={itemArtistUrl}>{this.props.product.artist.name}</Link></p>
             <p className="showpage-item-price">price: ${this.props.product.price}</p>
-            <button className="cart-button">Add to cart</button>
-            <br />
             <div className="item-description">
-              <span>details</span>
               <p className="item-description">{this.props.product.description}</p>
             </div>
+            <button className="cart-button">Add to cart</button>
+            <br />
           </div>
           <br/>
           <div className="review-showpage">
