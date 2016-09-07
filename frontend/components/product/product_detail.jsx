@@ -9,6 +9,7 @@ export class ProductDetail extends React.Component {
   constructor(props){
     super(props);
     this.handleReview = this.handleReview.bind(this);
+    this.handleCart = this.handleCart.bind(this);
   }
 
   componentDidMount(){
@@ -22,6 +23,14 @@ export class ProductDetail extends React.Component {
   handleReview(e){
     e.stopPropagation();
     hashHistory.replace("/products/" + this.props.params.id + "/review");
+  }
+
+  handleCart(e){
+    e.stopPropagation();
+    const productId = parseInt(this.props.params.id);
+    const cart_item = Object.assign({}, this.state, {product_id: productId});
+    this.props.createCartItem({cart_item});
+    hashHistory.replace("/cart");
   }
 
   showReviews(){
@@ -42,6 +51,7 @@ export class ProductDetail extends React.Component {
       </div>
     );
   }
+
 
   render() {
     if (!this.props.product) {
@@ -66,7 +76,7 @@ export class ProductDetail extends React.Component {
             <div className="item-description">
               <p className="item-description">{this.props.product.description}</p>
             </div>
-            <button className="cart-button">Add to cart</button>
+            <button className="cart-button" onClick={this.handleCart}>Add to cart</button>
             <br />
           </div>
           <br/>

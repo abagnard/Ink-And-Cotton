@@ -10,6 +10,7 @@ import ProductIndexContainer from './product/product_index_container';
 import MediumIndexContainer from './product/medium_index_container';
 import ProductDetailContainer from './product/product_detail_container';
 import ReviewFormContainer from './review/review_form_container';
+import CartIndexContainer from './cart/cart_index_container';
 
 
 
@@ -57,6 +58,7 @@ class AppRouter extends React.Component{
             <Route path="/inks" component={ MediumIndexContainer }/>
             <Route path="/cottons" component={ MediumIndexContainer }/>
             <Route path="/all" component={ MediumIndexContainer }/>
+            <Route path="/cart" component={ CartIndexContainer }/>
           </Route>
         </Route>
       </Router>

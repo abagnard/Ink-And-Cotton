@@ -8,6 +8,7 @@ export const CartItemMiddleware = ({getState, dispatch}) => next => action => {
 
   switch (action.type) {
     case CartItemConstants.CREATE_CART_ITEM:
+    
       createCartItem(action.cartItem, successCallback);
       return next(action);
     default:

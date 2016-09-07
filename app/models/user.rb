@@ -27,6 +27,10 @@ class User < ActiveRecord::Base
   has_many :reviews, dependent: :destroy
   has_many :cart_items, dependent: :destroy
 
+  has_many :cart_products,
+  through: :cart_items,
+  source: :product
+
   attr_reader :password
   #
   # def self.find_by_id(id)

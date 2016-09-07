@@ -20,20 +20,20 @@ class Api::CartItemsController < ApplicationController
       end
     end
 
-    def update
-      @cart_item = CartItem.find(params[:id])
-      if @cart_item.update(cart_item_params)
-        render "api/cart_items/index"
-      else
-        @errors = @cart_item.errors.full_messages
-        render "api/shared/errors", status: 422
-      end
-    end
+    # def update
+    #   @cart_item = CartItem.find(params[:id])
+    #   if @cart_item.update(cart_item_params)
+    #     render "api/products/show"
+    #   else
+    #     @errors = @cart_item.errors.full_messages
+    #     render "api/shared/errors", status: 422
+    #   end
+    # end
 
     def destroy
       @cart_item = CartItem.find(params[:id])
       if(@cart_item.destroy)
-        render "/api/cart_items/show"
+        render "/api/products/show"
       else
         @errors = @cart_item.errors.full_messages
         render "api/shared/errors", status: 422
@@ -45,4 +45,5 @@ class Api::CartItemsController < ApplicationController
     def cart_item_params
       params.require(:cart_item).permit(:user_id, :product_id, :quantity)
     end
+
   end

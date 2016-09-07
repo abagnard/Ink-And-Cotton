@@ -28,6 +28,11 @@ class Greeting extends React.Component {
     hashHistory.replace("/");
   }
 
+  enterCart(e){
+    e.stopPropagation();
+    hashHistory.replace("/cart");
+  }
+
   showArtist(e) {
     e.stopPropagation();
     hashHistory.replace("/artists");
@@ -58,7 +63,7 @@ class Greeting extends React.Component {
             <li className="header-link-list"><Link to="/inks">inks</Link></li>
             <li className="header-link-list"><Link to="/cottons">cottons</Link></li>
           </ul>
-          <button className="cart">Cart<span className="badge">3</span></button>
+          <button className="cart-button" onClick={this.enterCart}>Cart<span className="badge">3</span></button>
         </header>
         <div className="header-group-img"></div>
       </div>
