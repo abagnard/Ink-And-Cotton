@@ -1,6 +1,10 @@
 export const CartItemConstants = {
   CREATE_CART_ITEM: "CREATE_CART_ITEM",
-  REMOVE_CART_ITEM: "REMOVE_CART_ITEM"
+  UPDATE_CART_ITEM: "UPDATE_CART_ITEM",
+  REMOVE_CART_ITEM: "REMOVE_CART_ITEM",
+  RECEIVE_SINGLE_CART_ITEM: "RECEIVE_SINGLE_CART_ITEM",
+  RECEIVE_ALL_CART_ITEMS: "RECEIVE_ALL_CART_ITEMS",
+  FETCH_ALL_CART_ITEMS: "FETCH_ALL_CART_ITEMS"
 };
 
 export const createCartItem = cartItem => ({
@@ -8,7 +12,26 @@ export const createCartItem = cartItem => ({
   cartItem
 });
 
-export const removeCartItem = (id) => ({
+export const updateCartItem = cartItem => ({
+  type: CartItemConstants.UPDATE_CART_ITEM,
+  cartItem
+});
+
+export const removeCartItem = cartItem => ({
   type: CartItemConstants.REMOVE_CART_ITEM,
-  id
+  cartItem
+});
+
+export const fetchAllCartItems = () => ({
+  type: CartItemConstants.FETCH_ALL_CART_ITEMS
+});
+
+export const receiveSingleCartItem = cartItem => ({
+  type: CartItemConstants.RECEIVE_SINGLE_CART_ITEM,
+  cartItem
+});
+
+export const receiveAllCartItems = cartItems => ({
+  type: CartItemConstants.RECEIVE_ALL_CART_ITEMS,
+  cartItems
 });
