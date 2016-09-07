@@ -17,8 +17,8 @@ export const CartItemMiddleware = ({getState, dispatch}) => next => action => {
     case ACTIONS.CartItemConstants.UPDATE_CART_ITEM:
       API.updateCartItem(action.cartItem, editsSuccessCallback, errorCallback);
       return next(action);
-    case ACTIONS.CartItemConstants.REMOVE_CART_ITEM:
-      API.removeCartItem(action.cartItem, removeSuccessCallback);
+    case ACTIONS.CartItemConstants.DELETE_CART_ITEM:
+      API.removeCartItem(action.id, removeSuccessCallback);
       return next(action);
     case ACTIONS.CartItemConstants.FETCH_ALL_CART_ITEMS:
       API.fetchAllCartItems(allSuccessCallback);

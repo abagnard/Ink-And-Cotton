@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { removeCartItem } from '../../actions/cart_item_actions';
+import { deleteCartItem, updateCartItem, fetchAllCartItems } from '../../actions/cart_item_actions';
 import { CartIndex } from './cart_index';
 
 
@@ -8,17 +8,18 @@ import { CartIndex } from './cart_index';
 //     if (state.products[id].is_in_cart === true) {return state.products[id];}
 //   }).map(id => state.products[id]) : [];
 // };
-
+const cartItems = (state) => {
+  return state ? Object.keys(state.cartItems).map(id => state.cartItems[id]) : [];
+};
 
 const mapStateToProps = (state) => ({
-
+  cartItems: cartItems(state)
 });
 
 const mapDispatchToProps = dispatch => ({
   fetchAllCartItems: () => dispatch(fetchAllCartItems()),
-  createCartItem: (cartItem) => dispatch(createCartItem(cartItem)),
   updateCartItem: (cartItem) => dispatch(updateCartItem(cartItem)),
-  removeCartItem: (cartItem) => dispatch(removeCartItem(cartItem))
+  deleteCartItem: (id) => dispatch(deleteCartItem(id))
 });
 
 export default connect(

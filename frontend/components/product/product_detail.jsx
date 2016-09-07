@@ -25,11 +25,29 @@ export class ProductDetail extends React.Component {
     hashHistory.replace("/products/" + this.props.params.id + "/review");
   }
 
+  checkCart(id){
+    let isInCart = false;
+    this.props.cartItems.forEach(cartItem => {
+      if(cartItem.product.id === id) {
+        isInCart = true;
+      }
+    });
+    return isInCart;
+  }
+
+  quantityUpdate(e){
+    this.setState({quantity: e.target.value});
+  }
+
   handleCart(e){
     e.stopPropagation();
     const productId = parseInt(this.props.params.id);
-    const cart_item = Object.assign({}, this.state, {product_id: productId});
-    this.props.createCartItem({cart_item});
+    const cartItem = Object.assign({}, {product_id: productId, quantity: this.state.quantity});
+    if(this.checkCart(productId)) {
+      this.props.updateCartItem({cart_item: cartItem});
+    } else {
+      this.props.createCartItem({cart_item: cartItem});
+    }
     hashHistory.replace("/cart");
   }
 

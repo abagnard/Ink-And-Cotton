@@ -11,7 +11,7 @@ export class CartIndex extends React.Component {
   }
 
   componentDidMount() {
-    this.props.fetchAllProducts();
+    this.props.fetchAllCartItems();
   }
 
   checkOut() {
@@ -20,6 +20,8 @@ export class CartIndex extends React.Component {
 
 
   render() {
+
+
     return (
       <div className="showpage-container">
         <div className="showpage-header">
@@ -27,8 +29,9 @@ export class CartIndex extends React.Component {
           <p><a href="javascript: history.go(-1)">Go Back</a></p>
         </div>
         <div className="all-products">
-          {this.props.cartItems.map(product => (
-            <CartIndexItem key={product.id} removeCartItem = {this.props.removeCartItem} product = {product}/>
+          {this.props.cartItems.map(cartItem => (
+            <CartIndexItem key={cartItem.id} removeCartItem = {this.props.deleteCartItem}
+              updateCartItem = {this.props.updateCartItem} cartItem = {cartItem}/>
           ))}
         </div>
         <div className="total-amount">

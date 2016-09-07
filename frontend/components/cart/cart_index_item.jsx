@@ -11,24 +11,26 @@ export class CartIndexItem extends React.Component {
 
   showDetail(e) {
     e.stopPropagation();
-    hashHistory.replace("/products/" + this.props.product.id);
+    debugger
+    hashHistory.replace("/products/" + this.props.cartItem.product.id);
   }
 
   handleDelete(e){
     e.stopPropagation();
-    this.props.removeCartItem(this.props.product.id);
+
+    this.props.removeCartItem(this.props.cartItem.id);
   }
 
   render() {
     return (
       <div className="cart-item">
         <div className="cart-item-details">
-          <img src={this.props.product.img_url} onClick={this.showDetail}/>
+          <img src={this.props.cartItem.product.img_url} onClick={this.showDetail}/>
           <div>
-            <p className="cart-item-title" onClick={this.showDetail}>{this.props.product.title}</p>
-            <p className="cart-item-artist">{this.props.product.artist.name}</p>
+            <p className="cart-item-title" onClick={this.showDetail}>{this.props.cartItem.product.title}</p>
+            <p className="cart-item-artist">{this.props.cartItem.product.artist_name}</p>
           </div>
-          <p className="cart-item-price">${this.props.product.price}</p>
+          <p className="cart-item-price">${this.props.cartItem.product.price}</p>
           <p className="cart-item-quantity"> Quantity:</p>
           <button className="delete-item" onClick={this.handleDelete}>Delete</button>
         </div>

@@ -19,10 +19,10 @@ export const updateCartItem = (cartItem, success, error) => {
   });
 };
 
-export const removeCartItem = (cartItem, success) => {
+export const removeCartItem = (id, success) => {
   $.ajax({
     method: 'DELETE',
-    url: `api/cart_items/${cartItem.id}`,
+    url: `api/cart_items/${id}`,
     success
   });
 };

@@ -1,7 +1,7 @@
 class Api::CartItemsController < ApplicationController
 
     def index
-      @cart_items = CartItem.all
+      @cart_items = current_user.cart_items.includes(:product)
     end
 
     def show
@@ -21,8 +21,8 @@ class Api::CartItemsController < ApplicationController
     end
 
     def update
-      @cart_item = CartItem.find_by(product_id: params[:product_id])
-      if @cart_item.update(cart_item_params)
+      @cart_item = current_user.cart_items.find_by(product_id: params[:product_id])
+      if @cart_item.update({quantity: cart_item.quantity + cart_item_params[:quantity]})
         render "api/cart_items/show"
       else
         @errors = @cart_item.errors.full_messages
@@ -31,10 +31,10 @@ class Api::CartItemsController < ApplicationController
     end
 
     def destroy
-      @cart_item = CartItem.find(params[:id])
+      @cart_item = current_user.cart_items.find(params[:id])
       if(@cart_item.destroy)
         # @product = @cart_item.product
-        render "/api/cart_items/index"
+        render json: @cart_item.id
 
       end
     end
