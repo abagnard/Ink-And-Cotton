@@ -6,7 +6,7 @@ export class CartIndexItem extends React.Component {
   constructor(props){
     super(props);
     this.showDetail = this.showDetail.bind(this);
-
+    this.handleDelete = this.handleDelete.bind(this);
   }
 
   showDetail(e) {
@@ -14,6 +14,10 @@ export class CartIndexItem extends React.Component {
     hashHistory.replace("/products/" + this.props.product.id);
   }
 
+  handleDelete(e){
+    e.stopPropagation();
+    this.props.removeCartItem(this.props.product.id);
+  }
 
   render() {
     return (
@@ -26,6 +30,7 @@ export class CartIndexItem extends React.Component {
           </div>
           <p className="item-price">PRICE: ${this.props.product.price}</p>
           <p> Quantity:</p>
+          <button className="delete-item" onClick={this.handleDelete}>Delete</button>
         </div>
       </div>
     );

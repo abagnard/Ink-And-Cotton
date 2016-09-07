@@ -33,6 +33,7 @@ class Api::CartItemsController < ApplicationController
     def destroy
       @cart_item = CartItem.find(params[:id])
       if(@cart_item.destroy)
+        @product = @cart_item.product
         render "/api/products/show"
       else
         @errors = @cart_item.errors.full_messages

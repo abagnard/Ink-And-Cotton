@@ -8,7 +8,6 @@ export const fetchAllProducts = (success) => {
 };
 
 export const fetchSingleProduct = (id, success) => {
-
   $.ajax({
     url: `/api/products/${id}`,
     success

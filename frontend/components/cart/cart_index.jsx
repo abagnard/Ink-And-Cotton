@@ -21,7 +21,7 @@ export class CartIndex extends React.Component {
           <p><a href="javascript: history.go(-1)">Go Back</a></p>
           <div className="all-products">
             {this.props.cartItems.map(product => (
-              <CartIndexItem key={product.id} product = {product}/>
+              <CartIndexItem key={product.id} removeCartItem = {this.props.removeCartItem} product = {product}/>
             ))}
           </div>
         </div>
