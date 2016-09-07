@@ -333,6 +333,7 @@ header.header-sub-link-list {
 
 button.header-logout {
     text-align: left;
+    font-weight: bold;
 }
 
 button.header-logout:hover{
@@ -367,7 +368,7 @@ p.footer-header {
 
 footer.footer.group {
     text-align: center;
-    margin-top: 50px;
+    margin-top: 200px;
     border-top: 2px solid lightgray;
 }
 
@@ -562,8 +563,7 @@ span.badge {
 }
 
 
-button.cart-button:hover {
-}
+button.cart-button:hover {border-style: inset;color: black;}
 
 
 .inner-product-showpage {
@@ -769,13 +769,13 @@ div.right-nav-buttons button {
     display: inline-block;
     margin: 20px 0px 0px 0px;
     text-align: left;
-    min-width: 200px;
+    width: 180px;
 }
 
 
 p.cart-item-price {
     display: inline-block;
-    margin: 25px 35px 0px 0px;
+    margin: 25px 40px 0px 40px;
 }
 
 p.cart-item-quantity {
@@ -790,6 +790,7 @@ p.cart-item-quantity {
     padding: 20px;
     border-bottom: 1px solid lightgray;
     display: flex;
+    justify-content: center;
 }
 
 
@@ -819,12 +820,46 @@ button.delete-item {
 
 
 .total-amount {
-    padding: 20px 40px 0px 0px;
-    float: right;
+    /* padding: 20px 60px 0px 0px; */
+    /* float: right; */
     font-weight: bold;
     font-size: 20px;
+    text-align: center;
+    padding: 30px;
 }
 
 .total-amount p {
-    margin: 0;
+    margin-bottom: 15px;
+}
+
+
+.cart-item-title:hover, .cart-item-artist:hover {
+    color: lightseagreen;
+}
+
+
+.total-amount button {
+    /* margin: 50px 0px; */
+    background: lightseagreen;
+    border: lightseagreen;
+    border-radius: 5px;
+    font-size: 24px;
+    width: 250px;
+    padding: 5px;
+    text-align: center;
+    font-weight: bold;
+    color: darkslategrey;
+    border-style: outset;
+}
+
+.total-amount button:hover {
+    button.cart-button: hover {     border-style: inset;
+    color: black; }
+    button.cart-button: hover {     border-style: inset;
+    color: black; }
+    margin: button.cart-button:hover {     border-style: inset;
+    color: black; }
+    border-style: dashed;
+    color: black;
+    border-style: inset;
 }

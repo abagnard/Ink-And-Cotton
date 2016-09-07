@@ -1,4 +1,5 @@
 import React from 'react';
+import { hashHistory } from 'react-router';
 import {CartIndexItem} from './cart_index_item';
 
 
@@ -6,10 +7,15 @@ export class CartIndex extends React.Component {
 
   constructor(props){
 		super(props);
+    this.checkOut = this.checkOut.bind(this);
   }
 
   componentDidMount() {
     this.props.fetchAllProducts();
+  }
+
+  checkOut() {
+    hashHistory.replace("/checkout");
   }
 
 
@@ -27,6 +33,7 @@ export class CartIndex extends React.Component {
         </div>
         <div className="total-amount">
           <p>Total: </p>
+          <button onClick={this.checkOut}>Checkout</button>
         </div>
       </div>
     );
