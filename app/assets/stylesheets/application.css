@@ -266,7 +266,7 @@ span#home-logo {
   text-transform: lowercase;
 }
 
-span#home-logo {}
+
 span#home-logo:hover {
   color: lightseagreen;
   border-color: lightseagreen;
@@ -308,7 +308,7 @@ header.header-sub-link-list {
   left: 0px;
   width: 100%;
   margin: 0 auto;
-  background: #ccc;
+  background: lightseagreen;
   transition: all 0.7s ease-out;
   max-height: 0;
   display: flex;
@@ -337,6 +337,7 @@ button.header-logout {
 
 button.header-logout:hover{
   color: lightseagreen;
+  font-weight: bold;
   border-style: inset;
 }
 
@@ -407,6 +408,7 @@ ul.header-link-list:hover {
 
 .all-products {
     text-align: center;
+    margin: 0px 25px;
 }
 
 .item-artist a {color: black;}
@@ -433,9 +435,10 @@ ul.header-link-list:hover {
 
 
 .showpage-header {
-    margin-top: 55px;
+    margin: 55px 25px 10px 25px;
+    /* margin-bottom: 10px; */
     border-bottom: 2px solid lightgray;
-    padding-bottom: 20px;
+    padding-bottom: 10px;
     text-align: center;
 }
 
@@ -560,9 +563,6 @@ span.badge {
 
 
 button.cart-button:hover {
-    border-style: inset;
-    font-weight: bold;
-    color: black;
 }
 
 
@@ -599,7 +599,7 @@ button.cart-button:hover {
 }
 
 .review-content span {
-    display: block;
+    display: inline-block;
     text-transform: lowercase;
 }
 
@@ -609,7 +609,7 @@ button.review-button {
     border-radius: 5px;
 }
 
-.review-title {font-size: 24px;font-weight: bold;margin-bottom: -3px;color: black;}
+.review-title {font-size: 23px;font-weight: bold;margin-bottom: -14px;color: black;}
 
 
 .review-index-item {
@@ -625,6 +625,9 @@ button.review-button {
 .review-comment {
     font-size: 18px;
     color: black;
+    border-bottom: 1px solid lightgray;
+    padding-bottom: 15px;
+    margin-bottom: 5px;
 }
 
 
@@ -650,7 +653,7 @@ button.review-button {
 .review-form input[type="text"], input[type="number"], textarea {
     width: 99%;
     height: 25px;
-    font-size: 19px;
+    font-size: 18px;
 }
 
 .review-label-form label {
@@ -679,7 +682,7 @@ button.review-button {
 }
 
 .reivew-form-content {
-    margin: 8px 0px;
+    margin: 9px 0px;
     width: 300px;
     text-align: center;
 }
@@ -688,13 +691,14 @@ button.review-button {
     box-sizing: border-box;
     border: 1px solid lightgray;
     margin: 2px;
+    text-transform: lowercase;
 }
 
 button.submit-button {margin-left: 40px;}
 
 .review-showpage div {
     color: lightseagreen;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
 }
 
 .header-link-list a {
@@ -707,6 +711,7 @@ button.submit-button {margin-left: 40px;}
     padding: 17px 0px;
     display: block;
     border: none;
+    color: darkslategrey;
 }
 
 
@@ -720,4 +725,106 @@ button.submit-button {margin-left: 40px;}
 
 .product-index-item img:hover {
     border: 5px solid lightseagreen;
+}
+
+
+span.review-author {display: inherit;}
+
+.review-title div {
+    float: left;
+    margin-right: 10px;
+}
+
+
+.review-form-content textarea {
+}
+
+
+div.right-nav-buttons button:hover {
+    border-style: inset;
+    font-weight: bold;
+    color: lightseagreen;
+}
+
+div.right-nav-buttons button {
+    margin-left: 5px;
+    font-size: 18px;
+    width: 35px;
+}
+
+
+.header-sub-link-list a:hover {
+    color: black;
+}
+
+
+.cart-item-details img {
+    height: 150px;
+    margin: 0;
+    display: inline-block;
+    margin-right: 35px;
+}
+
+.cart-item-details div {
+    display: inline-block;
+    margin: 20px 0px 0px 0px;
+    text-align: left;
+    min-width: 200px;
+}
+
+
+p.cart-item-price {
+    display: inline-block;
+    margin: 25px 35px 0px 0px;
+}
+
+p.cart-item-quantity {
+    display: inline-block;
+    margin: 25px 20px 0px 20px;
+}
+
+
+.cart-item-details p {font-size: 16px;margin-bottom: 0px;}
+
+.cart-item-details {
+    padding: 20px;
+    border-bottom: 1px solid lightgray;
+    display: flex;
+}
+
+
+p.cart-item-artist {}
+
+p.cart-item-title {
+    font-size: 20px;
+    cursor: pointer;
+}
+
+p.cart-item-artist {
+    font-size: 14px;
+    color: dimgray;
+    cursor: pointer;
+}
+
+
+.cart-item {
+    margin: 0px 25px auto;
+}
+
+button.delete-item {
+    height: 25px;
+    border-radius: 5px;
+    margin: 20px 0px 0px 40px;
+}
+
+
+.total-amount {
+    padding: 20px 40px 0px 0px;
+    float: right;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.total-amount p {
+    margin: 0;
 }

@@ -17,13 +17,16 @@ export class CartIndex extends React.Component {
     return (
       <div className="showpage-container">
         <div className="showpage-header">
-          <h2>Your Cart</h2>
+          <p className="new-products-title">Your Cart</p>
           <p><a href="javascript: history.go(-1)">Go Back</a></p>
-          <div className="all-products">
-            {this.props.cartItems.map(product => (
-              <CartIndexItem key={product.id} removeCartItem = {this.props.removeCartItem} product = {product}/>
-            ))}
-          </div>
+        </div>
+        <div className="all-products">
+          {this.props.cartItems.map(product => (
+            <CartIndexItem key={product.id} removeCartItem = {this.props.removeCartItem} product = {product}/>
+          ))}
+        </div>
+        <div className="total-amount">
+          <p>Total: </p>
         </div>
       </div>
     );

@@ -63,7 +63,14 @@ class Greeting extends React.Component {
             <li className="header-link-list"><Link to="/inks">inks</Link></li>
             <li className="header-link-list"><Link to="/cottons">cottons</Link></li>
           </ul>
-          <button className="cart-button" onClick={this.enterCart}>Cart<span className="badge">3</span></button>
+          <div className="right-nav-buttons">
+            <button ><i className="fa fa-search" aria-hidden="true"></i></button>
+            <button onClick={this.goHome}><i className="fa fa-home" aria-hidden="true"></i></button>
+            <button className="cart-button" onClick={this.enterCart}>
+              <i className="fa fa-shopping-cart" aria-hidden="true"></i>
+              <span className="badge"></span>
+            </button>
+          </div>
         </header>
         <div className="header-group-img"></div>
       </div>

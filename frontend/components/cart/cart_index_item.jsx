@@ -21,15 +21,15 @@ export class CartIndexItem extends React.Component {
 
   render() {
     return (
-      <div className="product-index-item">
-        <div className="product-index-item-details">
+      <div className="cart-item">
+        <div className="cart-item-details">
           <img src={this.props.product.img_url} onClick={this.showDetail}/>
           <div>
-            <p className="item-title" onClick={this.showDetail}>{this.props.product.title}</p>
-            <p className="item-artist">ARTIST: {this.props.product.artist.name}</p>
+            <p className="cart-item-title" onClick={this.showDetail}>{this.props.product.title}</p>
+            <p className="cart-item-artist">{this.props.product.artist.name}</p>
           </div>
-          <p className="item-price">PRICE: ${this.props.product.price}</p>
-          <p> Quantity:</p>
+          <p className="cart-item-price">${this.props.product.price}</p>
+          <p className="cart-item-quantity"> Quantity:</p>
           <button className="delete-item" onClick={this.handleDelete}>Delete</button>
         </div>
       </div>
