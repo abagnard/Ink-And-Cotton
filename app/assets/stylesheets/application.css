@@ -563,7 +563,10 @@ span.badge {
 }
 
 
-button.cart-button:hover {border-style: inset;color: black;}
+button.cart-button:hover {
+  border-style: inset;
+  color: black;
+}
 
 
 .inner-product-showpage {
@@ -853,13 +856,12 @@ button.delete-item {
 }
 
 .total-amount button:hover {
-    button.cart-button: hover {     border-style: inset;
-    color: black; }
-    button.cart-button: hover {     border-style: inset;
-    color: black; }
-    margin: button.cart-button:hover {     border-style: inset;
-    color: black; }
     border-style: dashed;
     color: black;
     border-style: inset;
 }
+
+  button.cart-button:hover {
+    border-style: inset;
+    color: black;
+  }
