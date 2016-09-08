@@ -282,7 +282,7 @@ header.header-group-sublinks {
     width: 100%;
     color: dimgray;
     border-bottom: 2px solid lightgray;
-    margin: 0;
+    margin: 0px;
     display: flex;
     position: relative;
     justify-content: space-around;
@@ -338,8 +338,6 @@ header.header-sub-link-list {
 }
 
 button.header-logout {
-    text-align: left;
-    font-weight: bold;
 }
 
 button.header-logout:hover{
@@ -637,7 +635,6 @@ button.review-button {
 .review-comment {
     font-size: 18px;
     color: black;
-    border-bottom: 1px solid lightgray;
     padding-bottom: 15px;
     margin-bottom: 5px;
 }
@@ -753,16 +750,18 @@ span.review-author {display: inherit;}
 }
 
 
-div.right-nav-buttons button:hover {
+div.nav-buttons button:hover {
     border-style: inset;
     font-weight: bold;
     color: lightseagreen;
 }
 
-div.right-nav-buttons button {
+div.nav-buttons button {
     margin-left: 5px;
-    font-size: 18px;
-    width: 35px;
+    font-size: 22px;
+    padding: 3px 5px;
+    justify-content: center;
+    display: inline-flex;
 }
 
 
@@ -1033,4 +1032,101 @@ p.in-cart-warning {
 p.item-description {
     font-size: 16px;
     color: dimgray;
+}
+
+
+.contact-info {
+    text-align: center;
+    margin: 50px 220px;
+    border: 5px solid lightseagreen;
+    border-radius: 5px;
+    padding: 15px;
+}
+
+.contact-info div {
+    font-size: 34px;
+    border-bottom: 1px solid dimgray;
+    text-transform: capitalize;
+    color: dimgray;
+    margin-bottom: 15px;
+}
+
+.contact-info a {
+    font-size: 16px;
+    cursor: pointer;
+    color: dimgray;
+    text-transform: uppercase;
+}
+
+.contact-info a:hover {
+    color: lightseagreen;
+}
+
+
+div.links {
+    margin: -15px;
+    margin-bottom: 2px;
+    border-bottom: none;
+}
+
+
+.nav-buttons {
+    display: inline-flex;
+    margin: 0;
+}
+
+li.search-li {
+    border: 1px solid lightgray;
+    background: white;
+    padding: 0px 4px;
+    position: relative;
+    top: 11px;
+    left: 24px;
+    font-size: 20px;
+    width: 225px;
+}
+
+.search-container {
+    display: inline-flex;
+    margin-top: 3px;
+}
+
+
+input.search-input {
+    width: 225px;
+    vertical-align: sub;
+    padding-top: 0px;
+    height: 28px;
+    font-size: 15px;
+}
+
+
+.right-nav-buttonsv i {
+    vertical-align: -webkit-baseline-middle;
+    margin-right: 3px;
+    margin-bottom: 6px;
+    font-size: 22px;
+}
+
+
+.nav-buttons button > i {}
+
+
+i.fa.fa-search {}
+
+button.cart-button {
+    width: 34.44px;
+}
+
+ul.search-ul {
+    position: absolute;
+    z-index: 10;
+}
+
+input.search-input:active {}
+
+
+.review-content {
+    border-bottom: 1px solid lightgray;
+    margin-bottom: 15px;
 }

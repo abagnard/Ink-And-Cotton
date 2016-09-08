@@ -1,5 +1,6 @@
 import React from "react";
 import {Link} from "react-router";
+import { hashHistory } from 'react-router';
 import { productSearch } from '../../util/search_api_util';
 
 
@@ -19,6 +20,7 @@ export class Search extends React.Component {
     this.setState({search: e.target.value});
     productSearch(e.target.value, this.renderResults);
   }
+
 
   renderResults(products) {
     let results = [];
@@ -70,3 +72,12 @@ export class Search extends React.Component {
 //   {this.props.cottonProducts.map(product => (
 //     <ProductIndexItem key={product.id} product = {product}/>
 //   ))}
+
+
+// goToResultPage(){
+//   showDetail(e) {
+//     e.stopPropagation();
+//     hashHistory.replace("/products/" + this.props.product.id);
+//   }
+//
+// }

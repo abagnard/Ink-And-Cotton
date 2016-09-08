@@ -49,7 +49,10 @@ class Greeting extends React.Component {
           <span onClick={this.goHome} className="header-logo" id="home-logo">Ink & Cotton</span>
         </header>
         <header className="header-group-sublinks">
-          <button className="header-logout" onClick={(e) => this.logoutPreventDefault(e, logout)}>log out</button>
+          <div className="nav-buttons">
+            <button onClick={this.goHome}><i className="fa fa-home" aria-hidden="true"></i></button>
+            <button className="header-logout" onClick={(e) => this.logoutPreventDefault(e, logout)}><i className="fa fa-sign-out" aria-hidden="true"></i></button>
+          </div>
           <ul className="header-link-list">
             <li className="header-link-list">artists
                 <ul className="header-sub-link-list">
@@ -64,11 +67,8 @@ class Greeting extends React.Component {
             <li className="header-link-list"><Link to="/inks">inks</Link></li>
             <li className="header-link-list"><Link to="/cottons">cottons</Link></li>
           </ul>
-          <div className="right-nav-buttons">
-            <div>
-              < SearchContainer />
-            </div>
-            <button onClick={this.goHome}><i className="fa fa-home" aria-hidden="true"></i></button>
+          <div className="nav-buttons">
+            < SearchContainer />
             <button className="cart-button" onClick={this.enterCart}>
               <i className="fa fa-shopping-cart" aria-hidden="true"></i>
               <span className="badge"></span>
