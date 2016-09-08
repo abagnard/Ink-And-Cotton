@@ -91,8 +91,7 @@ export class ProductDetail extends React.Component {
     if (this.checkCart(parseInt(this.props.params.id))){
       return (
         <div>
-          <p className="in-cart-warning">you already have {this.getQuant(this.props.params.id)} of these items in your cart.
-          update quantity desired above</p>
+          <p className="in-cart-warning">item is already in cart</p>
         <button className="update-cart-button" onClick={this.handleCart}>Update Cart</button>
         </div>
       );
@@ -127,14 +126,17 @@ export class ProductDetail extends React.Component {
             <div className="item-description">
               <p className="item-description">{this.props.product.description}</p>
             </div>
-            <select onChange={this.quantityUpdate}>
-              <option selected={this.getQuant(this.props.params.id)}>{this.getQuant(this.props.params.id)}</option>
-              <option value="1">1</option>
-              <option value="2">2</option>
-              <option value="3">3</option>
-              <option value="4">4</option>
-              <option value="5">5</option>
-            </select>
+            <div className="item-quantity">
+              <p>Qty:</p>
+              <select onChange={this.quantityUpdate}>
+                <option selected={this.getQuant(this.props.params.id)}>{this.getQuant(this.props.params.id)}</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+              </select>
+            </div>
             {this.inCartWarning()}
             <br />
           </div>

@@ -153,16 +153,17 @@
  }
 
  .other-login-option input[type=submit] {
-   border-radius: 4px;
-   background: initial;
+   border-radius: 5px;
+   border-width: 4px;
+   background: lightseagreen;
    border-style: outset;
+   border-color: darkcyan;
    margin-top: 10px;
-   padding: 2px 13px;
-   color: lightseagreen;
-   font-size: 33px;
-   /* font-weight: bold; */
-   text-transform: lowercase;
-   font-variant: small-caps;
+   padding: 0px 13px;
+   padding-bottom: 3px;
+   line-height: 30px;
+   color: black;
+   font-size: 30px;
  }
 
 .other-login-option a:hover, input[type=submit]:hover {
@@ -179,7 +180,7 @@
 
  button.guest-button {
     color: lightseagreen;
-    font-size: 24px;
+    font-size: 23px;
     padding-bottom: 4px;
     /* text-decoration: underline; */
     background: whitesmoke;
@@ -498,7 +499,7 @@ p.showpage-item-price {
 }
 
 .product-showpage-details button {
-    margin: 50px 0px;
+    margin: 40px 0px 10px 0px;
     background: lightseagreen;
     border: lightseagreen;
     border-radius: 5px;
@@ -578,6 +579,7 @@ button.cart-button:hover {
 .other-login-option input:hover {
     text-decoration: none;
     border-style: inset;
+    color: black;
 }
 
 
@@ -610,6 +612,7 @@ button.review-button {
     float: right;
     font-size: 20px;
     border-radius: 5px;
+    padding: 0px 10px 2px 10px;
 }
 
 .review-title {font-size: 23px;font-weight: bold;margin-bottom: -14px;color: black;}
@@ -644,7 +647,7 @@ button.review-button {
     border-bottom: 1px solid dimgray;
 }
 
-.review-form form {border: 1px solid lightgray;padding: 10px;display: flex;}
+.review-form form {border: 1px solid lightgray;padding: 20px;margin-bottom: 20px;display: flex;}
 
 .review-form {
     margin: 0 auto;
@@ -669,8 +672,9 @@ button.review-button {
     font-size: 20px;
     border-radius: 5px;
     margin-top: 12px;
-    float: left;
-    margin-left: 11px;
+    /* float: left; */
+    margin: 10px 33px auto;
+    /* margin-left: 11px; */
 }
 
 
@@ -685,7 +689,7 @@ button.review-button {
 }
 
 .reivew-form-content {
-    margin: 9px 0px;
+    margin-top: 9px;
     width: 300px;
     text-align: center;
 }
@@ -694,14 +698,13 @@ button.review-button {
     box-sizing: border-box;
     border: 1px solid lightgray;
     margin: 2px;
-    text-transform: lowercase;
+    text-transform: none;
 }
 
-button.submit-button {margin-left: 40px;}
+button.submit-button {/* margin-left: 83px; */}
 
 .review-showpage div {
     color: lightseagreen;
-    margin-bottom: 20px;
 }
 
 .header-link-list a {
@@ -719,7 +722,8 @@ button.submit-button {margin-left: 40px;}
 
 
 .no-reviews {
-    margin-top: 50px;
+    margin-top: 21px;
+    margin-left: 5px;
 }
 
 
@@ -828,12 +832,11 @@ button.delete-item {
 
 
 .total-amount {
-    /* padding: 20px 60px 0px 0px; */
-    /* float: right; */
+    float: right;
     font-weight: bold;
-    font-size: 20px;
+    font-size: 22px;
     text-align: center;
-    padding: 30px;
+    padding: 30px 60px;
 }
 
 .total-amount p {
@@ -922,7 +925,7 @@ button.delete-item:hover {
 
 
 .cart-item-details-header {
-    display: flex;
+    display: block;
     font-size: 20px;
     justify-content: center;
     margin: 0px 25px auto;
@@ -932,16 +935,90 @@ button.delete-item:hover {
 
 
 .cart-header div {
-    display: inline-block;
-    margin: 15px 32px 3px 20px;
+    display: inline;
+    margin: 25px 40px 0px 40px;
+    /* float: right; */
 }
 
 .header-cart-item-price {
-    padding: 0px 0px 0px 100px;
+    /* padding: 0px 0px 0px 195px; */
 }
 
 
 p.cart-item-total-price {
     display: inline-block;
     margin: 25px 40px 0px 40px;
+}
+
+
+
+.cart-header {
+    text-align: right;
+}
+
+.review-title i {
+    display: inline-block;
+    font: normal normal normal 14px/1 FontAwesome;
+    font-size: inherit;
+    text-rendering: auto;
+    color: gold;
+    -webkit-font-smoothing: antialiased;
+}
+
+
+.product-showpage-details select {
+    /* -webkit-appearance: none; */
+    padding: 10px;
+    font-size: 26px;
+    line-height: 1;
+    border-radius: 0;
+    height: 35px;
+    width: 50px;
+    cursor: pointer;
+}
+
+button.review-button:hover {
+    border-style: inset;
+    background: darkgray;
+}
+
+.review-form-buttons button {
+    font-size: 20px;
+    border-radius: 5px;
+    padding: 0px 10px 2px 10px;
+}
+
+.review-form-buttons button:hover {
+    border-style: inset;
+    background: darkgray;
+}
+
+input[type="text"],     input[type="number"], textarea {
+    outline-color: lightseagreen;
+}
+
+.product-showpage-details select {
+    margin: 20px;
+    margin-left: 10px;
+    outline-color: lightseagreen;
+    outline-width: 5px;
+}
+
+.product-showpage-details option {
+}
+
+p.in-cart-warning {
+    text-align: center;
+    margin: 20px 0px 0px 0px;
+    font-size: 19px;
+    color: red;
+}
+
+
+.item-quantity {
+    display: flex;
+}
+
+.item-quantity p {
+    font-size: 24px;
 }
