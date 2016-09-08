@@ -279,13 +279,14 @@ span#home-logo:hover {
 
 
 header.header-group-sublinks {
-    width: 100%;
+    /* width: 100%; */
     color: dimgray;
     border-bottom: 2px solid lightgray;
     margin: 0px;
     display: flex;
+    padding: 0px 20px;
     position: relative;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
     background: white;
 }
@@ -318,7 +319,7 @@ header.header-sub-link-list {
   transition: all 0.7s ease-out;
   max-height: 0;
   display: flex;
-  /* justify-content: space-between; */
+  justify-content: center;
   align-items: center;
   overflow: hidden;
   cursor: pointer;
@@ -1077,12 +1078,13 @@ div.links {
 
 li.search-li {
     border: 1px solid lightgray;
+    border-top: white;
     background: white;
-    padding: 0px 4px;
+    padding: 2px 4px;
     position: relative;
     top: 11px;
     left: 24px;
-    font-size: 20px;
+    font-size: 15px;
     width: 225px;
 }
 
@@ -1095,9 +1097,9 @@ li.search-li {
 input.search-input {
     width: 225px;
     vertical-align: sub;
-    padding-top: 0px;
+    padding-top: 3px;
     height: 28px;
-    font-size: 15px;
+    font-size: 17px;
 }
 
 
@@ -1129,4 +1131,18 @@ input.search-input:active {}
 .review-content {
     border-bottom: 1px solid lightgray;
     margin-bottom: 15px;
+}
+
+
+li.search-li:first-child {
+    border-top: 1px solid lightgray;
+}
+
+
+ul.search-ul:hover {
+    color: dimgray;
+}
+
+li.search-li:hover {
+    color: lightseagreen;
 }
