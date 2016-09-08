@@ -1,6 +1,7 @@
 import React from 'react';
 import Bootstrap from 'bootstrap';
 import { hashHistory } from 'react-router';
+import SearchContainer from './search_container';
 import { Link } from 'react-router';
 
 
@@ -64,7 +65,9 @@ class Greeting extends React.Component {
             <li className="header-link-list"><Link to="/cottons">cottons</Link></li>
           </ul>
           <div className="right-nav-buttons">
-            <button ><i className="fa fa-search" aria-hidden="true"></i></button>
+            <div>
+              < SearchContainer />
+            </div>
             <button onClick={this.goHome}><i className="fa fa-home" aria-hidden="true"></i></button>
             <button className="cart-button" onClick={this.enterCart}>
               <i className="fa fa-shopping-cart" aria-hidden="true"></i>

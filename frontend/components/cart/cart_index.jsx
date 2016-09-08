@@ -49,7 +49,7 @@ export class CartIndex extends React.Component {
       return (
         <div className="empty-cart">
           <p>Your cart is currently empty...</p>
-          <p><Link to="/">let"'"s fix that</Link></p>
+          <p><Link to="/">let&#39;s fix that</Link></p>
         </div>
       );
     }

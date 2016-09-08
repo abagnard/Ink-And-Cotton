@@ -13,6 +13,10 @@ export class UserIndex extends React.Component {
     this.props.fetchSingleUser(this.props.params.id);
   }
 
+  componentWillReceiveProps(newProps) {
+    this.props.fetchSingleUser(newProps.params.id);
+  }
+
   render() {
 
     return (

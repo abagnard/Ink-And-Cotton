@@ -215,6 +215,7 @@ button.guest-button:hover {
  .product-index-item img {
      height: 320px;
      border: 5px solid transparent;
+     border-radius: 3px;
      width: inherit;
      margin: auto;
  }
