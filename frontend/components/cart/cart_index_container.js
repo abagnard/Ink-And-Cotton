@@ -3,11 +3,7 @@ import { deleteCartItem, updateCartItem, fetchAllCartItems } from '../../actions
 import { CartIndex } from './cart_index';
 
 
-// const cartItems = state => {
-//   return state ? Object.keys(state.products).filter(id => {
-//     if (state.products[id].is_in_cart === true) {return state.products[id];}
-//   }).map(id => state.products[id]) : [];
-// };
+
 const cartItems = (state) => {
   return state ? Object.keys(state.cartItems).map(id => state.cartItems[id]) : [];
 };

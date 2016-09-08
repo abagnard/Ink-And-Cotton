@@ -8,12 +8,17 @@ export class ProductDetail extends React.Component {
 
   constructor(props){
     super(props);
+    this.state = {quantity: 1};
     this.handleReview = this.handleReview.bind(this);
     this.handleCart = this.handleCart.bind(this);
+    this.quantityUpdate = this.quantityUpdate.bind(this);
+    this.getQuant = this.getQuant.bind(this);
+    this.checkCart = this.checkCart.bind(this);
   }
 
   componentDidMount(){
     this.props.fetchSingleProduct(this.props.params.id);
+    this.props.fetchAllCartItems();
   }
 
   componentWillReceiveProps(nextProps){
@@ -23,32 +28,6 @@ export class ProductDetail extends React.Component {
   handleReview(e){
     e.stopPropagation();
     hashHistory.replace("/products/" + this.props.params.id + "/review");
-  }
-
-  checkCart(id){
-    let isInCart = false;
-    this.props.cartItems.forEach(cartItem => {
-      if(cartItem.product.id === id) {
-        isInCart = true;
-      }
-    });
-    return isInCart;
-  }
-
-  quantityUpdate(e){
-    this.setState({quantity: e.target.value});
-  }
-
-  handleCart(e){
-    e.stopPropagation();
-    const productId = parseInt(this.props.params.id);
-    const cartItem = Object.assign({}, {product_id: productId, quantity: this.state.quantity});
-    if(this.checkCart(productId)) {
-      this.props.updateCartItem({cart_item: cartItem});
-    } else {
-      this.props.createCartItem({cart_item: cartItem});
-    }
-    hashHistory.replace("/cart");
   }
 
   showReviews(){
@@ -68,6 +47,60 @@ export class ProductDetail extends React.Component {
         ))}
       </div>
     );
+  }
+
+
+  checkCart(id){
+    let isInCart = false;
+    this.props.cartItems.forEach(cartItem => {
+      if(cartItem.product.id === id) {
+        isInCart = true;
+      }
+    });
+    return isInCart;
+  }
+
+  getQuant(id){
+    let numItems = 1;
+    this.props.cartItems.forEach(cartItem => {
+      if(cartItem.product.id === parseInt(id)) {
+        numItems = cartItem.quantity;
+      }
+    });
+    return numItems;
+  }
+
+  quantityUpdate(e){
+    this.setState({quantity: e.target.value});
+  }
+
+  handleCart(e){
+    e.stopPropagation();
+    const productId = parseInt(this.props.params.id);
+    const cartItem = Object.assign({}, {product_id: productId, quantity: this.state.quantity});
+
+    if(this.checkCart(productId)) {
+      this.props.updateCartItem(cartItem);
+    } else {
+      this.props.createCartItem(cartItem);
+    }
+    hashHistory.replace("/cart");
+  }
+
+  inCartWarning(){
+    if (this.checkCart(parseInt(this.props.params.id))){
+      return (
+        <div>
+          <p className="in-cart-warning">you already have {this.getQuant(this.props.params.id)} of these items in your cart.
+          update quantity desired above</p>
+        <button className="update-cart-button" onClick={this.handleCart}>Update Cart</button>
+        </div>
+      );
+    } else {
+      return(
+        <button className="add-cart-button" onClick={this.handleCart}>Add to cart</button>
+      );
+    }
   }
 
 
@@ -94,7 +127,15 @@ export class ProductDetail extends React.Component {
             <div className="item-description">
               <p className="item-description">{this.props.product.description}</p>
             </div>
-            <button className="cart-button" onClick={this.handleCart}>Add to cart</button>
+            <select onChange={this.quantityUpdate}>
+              <option selected={this.getQuant(this.props.params.id)}>{this.getQuant(this.props.params.id)}</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+            </select>
+            {this.inCartWarning()}
             <br />
           </div>
           <br/>

@@ -861,7 +861,12 @@ button.delete-item {
     border-style: inset;
 }
 
-  button.cart-button:hover {
+  button.update-cart-button:hover {
+    border-style: inset;
+    color: black;
+  }
+
+  button.add-cart-button:hover {
     border-style: inset;
     color: black;
   }

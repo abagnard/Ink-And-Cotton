@@ -4,7 +4,7 @@ export const createCartItem = (cartItem, success) => {
   $.ajax({
     method: 'POST',
     url: 'api/cart_items',
-    data: cartItem,
+    data: {cart_item: cartItem},
     success
   });
 };
@@ -13,7 +13,7 @@ export const updateCartItem = (cartItem, success, error) => {
   $.ajax({
     method: 'PATCH',
     url: `api/cart_items/${cartItem.id}`,
-    data: cartItem,
+    data: {cart_item: cartItem},
     success,
     error
   });

@@ -8,6 +8,7 @@ export const SessionMiddleware = ({getState, dispatch}) => next => action => {
     const errors = xhr.responseJSON;
     dispatch(receiveErrors(errors));
   };
+  
   switch (action.type) {
     case SessionConstants.SIGNUP:
       signup(action.user, successCallback, errorCallback);

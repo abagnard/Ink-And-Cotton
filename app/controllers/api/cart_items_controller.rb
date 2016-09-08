@@ -21,8 +21,9 @@ class Api::CartItemsController < ApplicationController
     end
 
     def update
-      @cart_item = current_user.cart_items.find_by(product_id: params[:product_id])
-      if @cart_item.update({quantity: cart_item.quantity + cart_item_params[:quantity]})
+      @cart_item = current_user.cart_items.find_by(product_id: params[:cart_item][:product_id])
+      # debugger
+      if @cart_item.update({quantity: params[:cart_item][:quantity]})
         render "api/cart_items/show"
       else
         @errors = @cart_item.errors.full_messages
