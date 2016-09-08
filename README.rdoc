@@ -1,28 +1,52 @@
-== README
+Ink & Cotton
+Shop on Ink & Cotton live
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Overview
 
-Things you may want to cover:
+Ink & Cotton is a single-page online marketplace built in React.js and Ruby on Rails. It incorporates user authentication, multi-resource searching, a unique checkout algorithm, and more in order to connect buyers and sellers from all over the world in a sleek, optimized manner.
 
-* Ruby version
+The core features of the site include:
 
-* System dependencies
+User Signup/Login w/ Hand-Rolled Authentication
+User Product Upload Using AWS Cloud Hosting
+Unique Shopping Cart Algorithm w/ Smart Checkout
+Review of Previous Carts via SQL Relations
+Product Reviews and Ratings w/ Immediate Feedback
+Product & User Search Bar via PgSearch
+Design Architecture
 
-* Configuration
+Ink & Cotton's back-end is built using Ruby on Rails and uses jbuilder to provide a JSON API. All API requests are made with AJAX, and successful API requests are dispatched through the Flux loop.
 
-* Database creation
+Backend
 
-* Database initialization
+Authentication
 
-* How to run the test suite
+Ink & Cotton uses custom-built authentication and never stores user passwords directly on the backend. Instead, BCrypt is used to hash and salt password upon signing up, and the database stores a password_digest to provide a means of verifying users for future log-ins.
 
-* Services (job queues, cache servers, search engines, etc.)
+Shopping Cart
 
-* Deployment instructions
+Ink & Cotton is designed to allow non-signed-in users the ability to shop with an anonymous cart. This requires the browser to store an id of the user's cart in it's cookies. In order to minimize space, an anonymous cart is only allotted for a non-signed-in user when they attempt to add an item to their cart or when they try and visit the cart view page. This prevents the over-production of temporary carts in storage and optimizes the size of the database. Additionally, if a non-logged-in user has a cart and then continues to sign-up before checking out, their anonymous cart will update with a new association to the user's account and no longer be stored in cookies. Similarly, if the user has an anonymous cart and continues to log-in, the contents of the anonymous cart will merge with the user's stored cart if one exists.
 
-* ...
+Searching
 
+Users are able to simultaneously search for products and user's shops. This uses PgSearch in order to provide multi-table searching.
 
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+File Hosting
+
+Amazon Web Services is used in order to upload and store images on the cloud. This enables users to host their products on the website. To increase performance, Paperclip is used to store multiple sizes of all uploaded images to trim excess file-size for pictures that would otherwise needed to be scaled down.
+
+Frontend
+
+The frontend is designed with React.js and utilizes its' virtual DOM rendering to optimize performance. Because everything sits on a single page and components are only rendered when they change or update, there are never any full page reloads and the interaction between the browser and the server are pared down to a minimum.
+
+API Requests
+
+Ink & Cotton is built using the design pattern of the Flux architecture, and makes all API requests using AJAX.
+
+Route Protection
+
+In order to protect certain routes from being accessed by users do not have privilege, the current user is bootstrapped to the window in order to be able to check credentials before the page loads.
+
+Fast Updating Content
+
+Users can see immediate responses when they do things like upload products or submit reviews without having to wait for the whole page to load. This makes the site incredibly responsive and a joy to use.

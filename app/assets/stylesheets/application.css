@@ -493,7 +493,7 @@ p.showpage-item-price {
 }
 
 .showpage-container p a:hover {
-    color: lightseagreen;
+    color: dimgray;
     /* text-decoration: underline; */
 }
 
@@ -765,7 +765,7 @@ div.right-nav-buttons button {
     height: 150px;
     margin: 0;
     display: inline-block;
-    margin-right: 35px;
+    margin-right: 45px;
 }
 
 .cart-item-details div {
@@ -783,11 +783,11 @@ p.cart-item-price {
 
 p.cart-item-quantity {
     display: inline-block;
-    margin: 25px 20px 0px 20px;
+    margin: 25px 40px 0px 40px;
 }
 
 
-.cart-item-details p {font-size: 16px;margin-bottom: 0px;}
+.cart-item-details p {font-size: 18px;margin-bottom: 0px;}
 
 .cart-item-details {
     padding: 20px;
@@ -804,9 +804,9 @@ p.cart-item-title {
     cursor: pointer;
 }
 
-p.cart-item-artist {
+p.cart-item-artist a {
     font-size: 14px;
-    color: dimgray;
+    color: lightseagreen;
     cursor: pointer;
 }
 
@@ -816,9 +816,14 @@ p.cart-item-artist {
 }
 
 button.delete-item {
-    height: 25px;
+    height: 23px;
+    font-size: 16px;
     border-radius: 5px;
-    margin: 20px 0px 0px 40px;
+    margin-top: 20px;
+    width: 65px;
+    text-align: center;
+    padding: 0px 5px 2px 5px;
+    /* margin: 20px 0px 0px 40px; */
 }
 
 
@@ -870,3 +875,73 @@ button.delete-item {
     border-style: inset;
     color: black;
   }
+
+
+.cart-item-details select {
+    padding: 10px;
+    font-size: 16px;
+    line-height: 1;
+    border-radius: 0;
+    height: 25px;
+    cursor: pointer;
+}
+
+.cart-item-details option {
+}
+
+
+button.delete-item:hover {
+    background-color: lightseagreen;
+    font-weight: bold;
+    border-color: darkcyan;
+    color: darkslategray;
+    border-style: inset;
+}
+
+.cart-item-details select:focus {outline-color: lightseagreen;}
+
+.cart-item-details select:hover {border-color: lightseagreen;border-width: 2px;}
+
+
+.empty-cart p {
+    text-align: center;
+    margin: 40px 25px;
+    font-size: 22px;
+    color: lightseagreen;
+    text-transform: lowercase;
+}
+
+.empty-cart a {
+    font-weight: bold;
+    color: lightseagreen;
+}
+
+.empty-cart a:hover {
+    color: dimgray;
+}
+
+
+.cart-item-details-header {
+    display: flex;
+    font-size: 20px;
+    justify-content: center;
+    margin: 0px 25px auto;
+    border-bottom: 2px solid lightgray;
+    padding: 0px 20px 10px 20px;
+}
+
+
+.cart-header div {
+    display: inline-block;
+    margin: 15px 32px 3px 20px;
+}
+
+.header-cart-item-price {
+    padding: 0px 0px 0px 100px;
+}
+
+
+p.cart-item-total-price {
+    display: inline-block;
+    margin: 25px 40px 0px 40px;
+}

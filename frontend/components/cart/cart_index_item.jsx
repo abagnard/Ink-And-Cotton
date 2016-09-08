@@ -11,6 +11,7 @@ export class CartIndexItem extends React.Component {
     this.showDetail = this.showDetail.bind(this);
     this.handleDelete = this.handleDelete.bind(this);
     this.quantityUpdate = this.quantityUpdate.bind(this);
+    this.calcTotal = this.calcTotal.bind(this);
   }
 
   showDetail(e) {
@@ -30,6 +31,12 @@ export class CartIndexItem extends React.Component {
     this.props.updateCartItem(this.props.cartItem);
   }
 
+  calcTotal(){
+    return(
+      this.props.cartItem.quantity * this.props.cartItem.product.price
+    );
+  }
+
   render() {
     const itemArtistUrl = `/users/${this.props.cartItem.product.artist_id}`;
     return (
@@ -39,9 +46,10 @@ export class CartIndexItem extends React.Component {
           <div>
             <p className="cart-item-title" onClick={this.showDetail}>{this.props.cartItem.product.title}</p>
             <p className="cart-item-artist"><Link to={itemArtistUrl}>{this.props.cartItem.product.artist_name}</Link></p>
+            <button className="delete-item" onClick={this.handleDelete}>remove</button>
           </div>
           <p className="cart-item-price">${this.props.cartItem.product.price}</p>
-          <p className="cart-item-quantity"> Quantity:</p>
+          <p className="cart-item-quantity">
             <select onChange={this.quantityUpdate}>
               <option selected="selected" value="{this.props.cartItem.quantity}">{this.props.cartItem.quantity}</option>
               <option value="1">1</option>
@@ -50,7 +58,8 @@ export class CartIndexItem extends React.Component {
               <option value="4">4</option>
               <option value="5">5</option>
             </select>
-          <button className="delete-item" onClick={this.handleDelete}>Delete</button>
+          </p>
+          <p className="cart-item-total-price">${this.calcTotal()}</p>
         </div>
       </div>
     );
