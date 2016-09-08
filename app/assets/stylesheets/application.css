@@ -214,6 +214,7 @@ button.guest-button:hover {
 
  .product-index-item img {
      height: 320px;
+     border: 5px solid transparent;
      width: inherit;
      margin: auto;
  }
@@ -249,9 +250,11 @@ button.guest-button:hover {
 
  .item-price {
      margin: 0 auto;
-     font-size: 20px;
+     font-size: 14px;
      text-transform: lowercase;
      font-variant: inherit;
+     font-variant: small-caps;
+     text-transform: uppercase;
  }
 
  button.cart{
@@ -295,6 +298,7 @@ header.header-sub-link-list {
   color: dimgray;
   display: inline-block;
   padding: 19px;
+  padding-bottom: 0px;
   white-space: nowrap;
   margin: 0;
 }
@@ -491,10 +495,11 @@ p.showpage-item-price {
 .header-link-list > li:first-child {
     /* border-left-color: white; */
     padding-right: 20px;
+    padding-bottom: 19px;
 }
 
 .showpage-container p a:hover {
-    color: dimgray;
+    color: lightseagreen;
     /* text-decoration: underline; */
 }
 
@@ -731,7 +736,7 @@ button.submit-button {/* margin-left: 83px; */}
 
 
 .product-index-item img:hover {
-    border: 5px solid lightseagreen;
+    border-color: lightseagreen;
 }
 
 
