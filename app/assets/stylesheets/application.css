@@ -471,8 +471,8 @@ p.showpage-item-artist {
 }
 
 p.showpage-item-price {
-    font-size: 25px;
-    margin: 12px;
+    font-size: 20px;
+    margin-bottom: 30px;
 }
 
 .item-description span {
@@ -647,7 +647,7 @@ button.review-button {
     border-bottom: 1px solid dimgray;
 }
 
-.review-form form {border: 1px solid lightgray;padding: 20px;margin-bottom: 20px;display: flex;}
+.review-form form {border: 1px solid lightgray;padding: 20px;margin: 20px auto;display: flex;}
 
 .review-form {
     margin: 0 auto;
@@ -1021,4 +1021,10 @@ p.in-cart-warning {
 
 .item-quantity p {
     font-size: 24px;
+}
+
+
+p.item-description {
+    font-size: 16px;
+    color: dimgray;
 }
