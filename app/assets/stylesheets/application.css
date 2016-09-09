@@ -173,21 +173,16 @@
  .other-login-option a {
    margin-left: 5px;
    color: lightseagreen;
-   /* text-decoration: underline; */
-   text-transform: lowercase;
-   font-variant: small-caps;
+   text-transform: uppercase;
  }
 
  button.guest-button {
-    color: lightseagreen;
-    font-size: 23px;
-    padding-bottom: 4px;
-    /* text-decoration: underline; */
-    background: whitesmoke;
-    border-color: whitesmoke;
-    border-style: none;
-    /* text-transform: lowercase; */
-    /* font-variant: small-caps; */
+   color: lightseagreen;
+   font-size: 20px;
+   padding-bottom: 0px;
+   background: whitesmoke;
+   border-color: whitesmoke;
+   border-style: none;
 }
 
 button.guest-button:hover {
@@ -213,7 +208,7 @@ button.guest-button:hover {
 
 
  .product-index-item img {
-     height: 320px;
+     height: 300px;
      border: 5px solid transparent;
      border-radius: 3px;
      width: inherit;
@@ -356,9 +351,9 @@ button.header-logout:hover{
 
 
 .other-login-option {
-    font-size: 22px;
-    text-transform: lowercase;
-    font-variant: small-caps;
+  font-size: 14px;
+  text-transform: uppercase;
+  font-variant: small-caps;
 }
 
 
@@ -784,7 +779,7 @@ div.nav-buttons button {
 
 
 .cart-item-details img {
-    height: 150px;
+    height: 175px;
     margin: 0;
     display: inline-block;
     margin-right: 45px;
@@ -800,12 +795,12 @@ div.nav-buttons button {
 
 p.cart-item-price {
     display: inline-block;
-    margin: 25px 40px 0px 40px;
+    margin: 25px 50px 0px 50px;
 }
 
 p.cart-item-quantity {
     display: inline-block;
-    margin: 25px 40px 0px 40px;
+    margin: 25px 50px 0px 50px;
 }
 
 
@@ -965,7 +960,7 @@ button.delete-item:hover {
 
 p.cart-item-total-price {
     display: inline-block;
-    margin: 25px 40px 0px 40px;
+    margin: 25px 50px 0px 50px;
 }
 
 
@@ -1011,7 +1006,7 @@ button.review-button:hover {
     background: darkgray;
 }
 
-input[type="text"],     input[type="number"], textarea {
+input[type="text"], input[type="number"], input[type="password"], textarea{
     outline-color: lightseagreen;
 }
 
@@ -1023,6 +1018,13 @@ input[type="text"],     input[type="number"], textarea {
     font-size: 20px;
     height: 28px;
     width: 42px;
+}
+
+.showpage-header-cottons {
+    margin: 15px 25px 10px 25px;
+    border-bottom: 2px solid lightgray;
+    padding-bottom: 10px;
+    text-align: center;
 }
 
 .product-showpage-details option {font-size: 20px;}

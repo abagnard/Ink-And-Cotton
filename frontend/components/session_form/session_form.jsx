@@ -69,7 +69,7 @@ class SessionForm extends React.Component {
 					<br />
 					{this.renderErrors()}
 					<br />
-					New to Paper & Cotton?
+					New to Ink & Cotton:
 					<Link to="/signup">Create Account</Link>
 					<br />
 					Sign in as guest:

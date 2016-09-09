@@ -30,7 +30,7 @@ export class ProductIndex extends React.Component {
         </div>
         <br />
         <div className="showpage-container">
-          <div className="showpage-header">
+          <div className="showpage-header-cottons">
             <p className="new-products-title">New Cottons</p>
             <p><Link to="/cottons">View All Cottons</Link></p>
           </div>
