@@ -371,7 +371,7 @@ p.footer-header {
     text-align: center;
 }
 
-footer.footer.group {
+.footer-group {
     text-align: center;
     margin-top: 200px;
     border-top: 2px solid lightgray;
@@ -483,6 +483,20 @@ p.showpage-item-price {
     font-size: 25px;
 }
 
+.header-subgroup {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.header-subgroup.left{
+  justify-content: flex-start;
+}
+
+.header-subgroup.right{
+  justify-content: flex-end;
+  min-width: 290px;
+}
 
 .header-link-list > li {
     font-size: 22px;
@@ -914,7 +928,7 @@ button.delete-item:hover {
 
 .empty-cart p {
     text-align: center;
-    margin: 40px 25px;
+    margin: -2px 25px;
     font-size: 22px;
     color: lightseagreen;
     text-transform: lowercase;
@@ -922,7 +936,7 @@ button.delete-item:hover {
 
 .empty-cart a {
     font-weight: bold;
-    color: lightseagreen;
+    color: dimgray;
 }
 
 .empty-cart a:hover {
@@ -1145,4 +1159,13 @@ ul.search-ul:hover {
 
 li.search-li:hover {
     color: lightseagreen;
+}
+
+
+div.empty-cart {
+    margin-top: 40px;
+}
+
+.empty-cart a:hover {
+    color: dimgray;
 }

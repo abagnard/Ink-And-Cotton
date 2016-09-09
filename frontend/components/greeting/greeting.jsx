@@ -48,30 +48,36 @@ class Greeting extends React.Component {
           <span onClick={this.goHome} className="header-logo" id="home-logo">Ink & Cotton</span>
         </header>
         <header className="header-group-sublinks">
-          <div className="nav-buttons">
-            <button onClick={this.goHome}><i className="fa fa-home" aria-hidden="true"></i></button>
-            <button className="header-logout" onClick={(e) => this.logoutPreventDefault(e, logout)}><i className="fa fa-sign-out" aria-hidden="true"></i></button>
+          <div className="header-subgroup left">
+            <div className="nav-buttons">
+              <button onClick={this.goHome}><i className="fa fa-home" aria-hidden="true"></i></button>
+              <button className="header-logout" onClick={(e) => this.logoutPreventDefault(e, logout)}><i className="fa fa-sign-out" aria-hidden="true"></i></button>
+            </div>
           </div>
-          <ul className="header-link-list">
-            <li className="header-link-list">artists
-                <ul className="header-sub-link-list">
-                  <li><Link to="/users/7">ALEX INC</Link></li>
-                  <li><Link to="/users/4">Colette Miller</Link></li>
-                  <li><Link to="/users/3">Maya Hayuk</Link></li>
-                  <li><Link to="/users/6">Royal</Link></li>
-                  <li><Link to="/users/5">WRDSMTH</Link></li>
-                </ul>
-            </li>
-            <li className="header-link-list"><Link to="/all">all</Link></li>
-            <li className="header-link-list"><Link to="/inks">inks</Link></li>
-            <li className="header-link-list"><Link to="/cottons">cottons</Link></li>
-          </ul>
-          <div className="nav-buttons">
-            < SearchContainer />
-            <button className="cart-button" onClick={this.enterCart}>
-              <i className="fa fa-shopping-cart" aria-hidden="true"></i>
-              <span className="badge"></span>
-            </button>
+          <div className="header-subgroup">
+            <ul className="header-link-list">
+              <li className="header-link-list">artists
+                  <ul className="header-sub-link-list">
+                    <li><Link to="/users/7">ALEX INC</Link></li>
+                    <li><Link to="/users/4">Colette Miller</Link></li>
+                    <li><Link to="/users/3">Maya Hayuk</Link></li>
+                    <li><Link to="/users/6">Royal</Link></li>
+                    <li><Link to="/users/5">WRDSMTH</Link></li>
+                  </ul>
+              </li>
+              <li className="header-link-list"><Link to="/all">all</Link></li>
+              <li className="header-link-list"><Link to="/inks">inks</Link></li>
+              <li className="header-link-list"><Link to="/cottons">cottons</Link></li>
+            </ul>
+          </div>
+          <div className="header-subgroup right">
+            <div className="nav-buttons">
+              < SearchContainer />
+              <button className="cart-button" onClick={this.enterCart}>
+                <i className="fa fa-shopping-cart" aria-hidden="true"></i>
+                <span className="badge"></span>
+              </button>
+            </div>
           </div>
         </header>
         <div className="header-group-img"></div>

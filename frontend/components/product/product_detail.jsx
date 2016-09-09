@@ -14,6 +14,7 @@ export class ProductDetail extends React.Component {
     this.quantityUpdate = this.quantityUpdate.bind(this);
     this.getQuant = this.getQuant.bind(this);
     this.checkCart = this.checkCart.bind(this);
+    this.checkSelected = this.checkSelected.bind(this);
   }
 
   componentDidMount(){
@@ -87,6 +88,14 @@ export class ProductDetail extends React.Component {
     hashHistory.replace("/cart");
   }
 
+  checkSelected(num){
+    if(this.getQuant(this.props.params.id) === num) {
+      return "selected";
+    } else {
+      return "";
+    }
+  }
+
   inCartWarning(){
     if (this.checkCart(parseInt(this.props.params.id))){
       return (
@@ -129,12 +138,11 @@ export class ProductDetail extends React.Component {
             <div className="item-quantity">
               <p>Qty:</p>
               <select onChange={this.quantityUpdate}>
-                <option selected={this.getQuant(this.props.params.id)}>{this.getQuant(this.props.params.id)}</option>
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
-                <option value="5">5</option>
+                <option selected={this.checkSelected(1)} value="1">1</option>
+                <option selected={this.checkSelected(2)} value="2">2</option>
+                <option selected={this.checkSelected(3)} value="3">3</option>
+                <option selected={this.checkSelected(4)} value="4">4</option>
+                <option selected={this.checkSelected(5)} value="5">5</option>
               </select>
             </div>
             {this.inCartWarning()}
@@ -152,3 +160,5 @@ export class ProductDetail extends React.Component {
     );
   }
 }
+
+                // <option selected={this.getQuant(this.props.params.id)}>{this.getQuant(this.props.params.id)}</option>

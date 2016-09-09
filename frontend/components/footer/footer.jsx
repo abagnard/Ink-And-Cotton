@@ -30,14 +30,14 @@ class Footer extends React.Component {
 
   render() {
     return (
-      <div>
-        <footer className="footer group">
+      <div className="footer">
+        <div className="footer-group">
           <ul className="footer-link-list">
             <li><Link to="/">home</Link></li>
             <li><Link to="/about">about</Link></li>
             <li><Link to="/contact-us">contact us</Link></li>
           </ul>
-        </footer>
+        </div>
         <div>
           <p className="footer-header">© 2016 Ink & Cotton</p>
           <div className="footer-group-img"></div>

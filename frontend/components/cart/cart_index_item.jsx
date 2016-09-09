@@ -12,6 +12,7 @@ export class CartIndexItem extends React.Component {
     this.handleDelete = this.handleDelete.bind(this);
     this.quantityUpdate = this.quantityUpdate.bind(this);
     this.calcTotal = this.calcTotal.bind(this);
+    this.checkSelected = this.checkSelected.bind(this);
   }
 
   showDetail(e) {
@@ -22,6 +23,14 @@ export class CartIndexItem extends React.Component {
   handleDelete(e){
     e.stopPropagation();
     this.props.removeCartItem(this.props.cartItem.id);
+  }
+
+  checkSelected(num){
+    if(this.props.cartItem.quantity === num) {
+      return "selected";
+    } else {
+      return "";
+    }
   }
 
   quantityUpdate(e){
@@ -51,12 +60,11 @@ export class CartIndexItem extends React.Component {
           <p className="cart-item-price">${this.props.cartItem.product.price}</p>
           <p className="cart-item-quantity">
             <select onChange={this.quantityUpdate}>
-              <option selected="selected" value="{this.props.cartItem.quantity}">{this.props.cartItem.quantity}</option>
-              <option value="1">1</option>
-              <option value="2">2</option>
-              <option value="3">3</option>
-              <option value="4">4</option>
-              <option value="5">5</option>
+              <option selected={this.checkSelected(1)} value="1">1</option>
+              <option selected={this.checkSelected(2)} value="2">2</option>
+              <option selected={this.checkSelected(3)} value="3">3</option>
+              <option selected={this.checkSelected(4)} value="4">4</option>
+              <option selected={this.checkSelected(5)} value="5">5</option>
             </select>
           </p>
           <p className="cart-item-total-price">${this.calcTotal()}</p>
