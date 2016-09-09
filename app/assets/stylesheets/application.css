@@ -1236,3 +1236,29 @@ p.cart-item-artist a:hover {
     text-transform: inherit;
     font-variant: small-caps;
 }
+
+
+.about-info {
+    margin: 30px 25px;
+    border-bottom: 2px solid lightgray;
+    text-align: center;
+    color: dimgray;
+    font-weight: bold;
+    padding-bottom: 25px;
+}
+
+p.last-line-about {
+    padding-top: 20px;
+    margin-bottom: 6px;
+}
+
+a.about-link {
+    font-size: 20px;
+    color: lightseagreen;
+    text-transform: inherit;
+}
+
+
+a.about-link:hover {
+    color: dimgray;
+}

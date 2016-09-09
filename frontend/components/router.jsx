@@ -78,6 +78,3 @@ AppRouter.contextTypes = {
 };
 
 export default AppRouter;
-
-// <Route path="/about" component={ InfoContainer }/>
-// <Route path="/contact-us" component={ InfoContainer }/>
