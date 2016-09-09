@@ -780,9 +780,8 @@ div.nav-buttons button {
 
 .cart-item-details img {
     height: 175px;
-    margin: 0;
-    display: inline-block;
     margin-right: 45px;
+    margin-left: 20px;
 }
 
 .cart-item-details div {
@@ -1261,4 +1260,74 @@ a.about-link {
 
 a.about-link:hover {
     color: dimgray;
+}
+
+
+table.checkout-table {
+    width: 100%;
+    table-layout: fixed;
+}
+
+tr.table-header {
+    font-size: 18px;
+}
+
+.table-header th {
+    border-bottom: 2px solid lightgray;
+    padding: 6px 0px;
+}
+
+tr.table-details td {border-bottom: 1px solid lightgray;}
+
+.table-details td {
+}
+
+
+td.table-item {
+    text-align: center;
+    display: flex;
+    padding-top: 20px;
+}
+
+.table-item div {
+    vertical-align: top;
+}
+
+.table-price {
+    vertical-align: top;
+    text-align: center;
+}
+
+
+.table-price div {
+    text-align: center;
+    padding-top: 20px;
+    width: 50%;
+}
+
+.table-quantity div {
+    text-align: center;
+    padding-top: 20px;
+    width: 50%;
+}
+
+.table-quantity {
+    vertical-align: top;
+    text-align: center;
+}
+
+.table-total {
+    vertical-align: top;
+    text-align: center;
+}
+
+.table-total div {
+    text-align: center;
+    padding-top: 20px;
+    width: 50%;
+}
+
+
+tr.table-details:last-child td {
+    border-bottom: none;
 }

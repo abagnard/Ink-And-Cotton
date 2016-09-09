@@ -37,19 +37,21 @@ export class CartIndex extends React.Component {
     if (this.props.cartItems.length > 0) {
       return(
         <div>
-          <div className="all-products">
-              <div className="cart-item-details-header">
-                <div className="cart-header">
-                  <div className="header-cart-item">Item</div>
-                  <div className="header-cart-item-price">price</div>
-                  <div className="header-cart-item-quantity">Qty</div>
-                  <div className="header-cart-item-total">total</div>
-                </div>
-              </div>
-            {this.props.cartItems.map(cartItem => (
-              <CartIndexItem key={cartItem.id} removeCartItem = {this.props.deleteCartItem}
-                updateCartItem = {this.props.updateCartItem} cartItem = {cartItem}/>
-            ))}
+          <div className="cart-item">
+            <div className="cart-item-details">
+              <table className="checkout-table">
+                <tr className="table-header">
+                  <th width="370px">Item</th>
+                  <th>Price</th>
+                  <th>Qty</th>
+                  <th>Total</th>
+                </tr>
+                {this.props.cartItems.map(cartItem => (
+                  <CartIndexItem key={cartItem.id} removeCartItem = {this.props.deleteCartItem}
+                    updateCartItem = {this.props.updateCartItem} cartItem = {cartItem}/>
+                ))}
+              </table>
+            </div>
           </div>
           <div className="total-amount">
             <p>Total: ${this.calculateTotal()}</p>
@@ -80,3 +82,29 @@ export class CartIndex extends React.Component {
     );
   }
 }
+
+
+
+
+
+// <div>
+//   <div className="all-products">
+//       <div className="cart-item-details-header">
+//         <div className="cart-header">
+//           <div className="header-cart-item">Item</div>
+//           <div className="header-cart-item-price">price</div>
+//           <div className="header-cart-item-quantity">Qty</div>
+//           <div className="header-cart-item-total">total</div>
+//         </div>
+//       </div>
+    // {this.props.cartItems.map(cartItem => (
+    //   <CartIndexItem key={cartItem.id} removeCartItem = {this.props.deleteCartItem}
+    //     updateCartItem = {this.props.updateCartItem} cartItem = {cartItem}/>
+    // ))}
+//   </div>
+//   <div className="total-amount">
+//     <p>Total: ${this.calculateTotal()}</p>
+//     <button onClick={this.checkOut}>Check out</button>
+//   </div>
+// </div>
+//

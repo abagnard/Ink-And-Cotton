@@ -49,16 +49,18 @@ export class CartIndexItem extends React.Component {
   render() {
     const itemArtistUrl = `/users/${this.props.cartItem.product.artist_id}`;
     return (
-      <div className="cart-item">
-        <div className="cart-item-details">
+      <tr className="table-details">
+        <td className="table-item">
           <img src={this.props.cartItem.product.img_url} onClick={this.showDetail}/>
           <div>
             <p className="cart-item-title" onClick={this.showDetail}>{this.props.cartItem.product.title}</p>
             <p className="cart-item-artist"><Link to={itemArtistUrl}>{this.props.cartItem.product.artist_name}</Link></p>
             <button className="delete-item" onClick={this.handleDelete}>remove</button>
           </div>
-          <p className="cart-item-price">${this.props.cartItem.product.price}</p>
-          <p className="cart-item-quantity">
+        </td>
+        <td className="table-price"><div>${this.props.cartItem.product.price}</div></td>
+        <td className="table-quantity">
+          <div className="cart-item-quantity">
             <select onChange={this.quantityUpdate}>
               <option selected={this.checkSelected(1)} value="1">1</option>
               <option selected={this.checkSelected(2)} value="2">2</option>
@@ -66,10 +68,29 @@ export class CartIndexItem extends React.Component {
               <option selected={this.checkSelected(4)} value="4">4</option>
               <option selected={this.checkSelected(5)} value="5">5</option>
             </select>
-          </p>
-          <p className="cart-item-total-price">${this.calcTotal()}</p>
-        </div>
-      </div>
+          </div>
+        </td>
+        <td className="table-total"><div>${this.calcTotal()}</div></td>
+      </tr>
     );
   }
 }
+
+
+// <img src={this.props.cartItem.product.img_url} onClick={this.showDetail}/>
+// <div>
+//   <p className="cart-item-title" onClick={this.showDetail}>{this.props.cartItem.product.title}</p>
+//   <p className="cart-item-artist"><Link to={itemArtistUrl}>{this.props.cartItem.product.artist_name}</Link></p>
+//   <button className="delete-item" onClick={this.handleDelete}>remove</button>
+// </div>
+// <p className="cart-item-price">${this.props.cartItem.product.price}</p>
+// <p className="cart-item-quantity">
+//   <select onChange={this.quantityUpdate}>
+//     <option selected={this.checkSelected(1)} value="1">1</option>
+//     <option selected={this.checkSelected(2)} value="2">2</option>
+//     <option selected={this.checkSelected(3)} value="3">3</option>
+//     <option selected={this.checkSelected(4)} value="4">4</option>
+//     <option selected={this.checkSelected(5)} value="5">5</option>
+//   </select>
+// </p>
+// <p className="cart-item-total-price">${this.calcTotal()}</p>
