@@ -4,7 +4,8 @@ import Greeting from './greeting';
 
 
 const mapStateToProps = state => ({
-  currentUser: state.session.currentUser
+  currentUser: state.session.currentUser,
+  cartItems: state.cartItems
 });
 
 const mapDispatchToProps = dispatch => ({
@@ -13,16 +14,3 @@ const mapDispatchToProps = dispatch => ({
 
 
 export default connect(mapStateToProps, mapDispatchToProps)(Greeting);
-
-
-
-// 
-// const mapStateToProps = (state) => ({
-//   cartItems: cartItems(state)
-// });
-// const cartItems = (state) => {
-//   let totalCartItems = 0;
-//   Object.keys(state.cartItems).map(cartItem => {
-//     totalCartItems += cartItem.quantity;});
-//   return totalCartItems;
-// };

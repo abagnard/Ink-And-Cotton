@@ -7,7 +7,6 @@ import { Link } from 'react-router';
 
 class Greeting extends React.Component {
 
-
   logoutPreventDefault(e, callback){
     e.preventDefault();
     callback();
@@ -16,6 +15,10 @@ class Greeting extends React.Component {
   handleLogout(e){
     e.stopPropagation();
     this.props.logout();
+  }
+
+  componentDidMount() {
+    this.getCartItemNum();
   }
 
   componentWillReceiveProps(nextProps){
@@ -37,6 +40,17 @@ class Greeting extends React.Component {
   showArtist(e) {
     e.stopPropagation();
     hashHistory.replace("/artists");
+  }
+
+  getCartItemNum() {
+    let sum = 0;
+    Object.keys(this.props.cartItems).forEach(id => sum += this.props.cartItems[id].quantity);
+
+    if (sum === 0){
+      return "";
+    } else {
+      return sum;
+    }
   }
 
 
@@ -75,7 +89,7 @@ class Greeting extends React.Component {
               < SearchContainer />
               <button className="cart-button" onClick={this.enterCart}>
                 <i className="fa fa-shopping-cart" aria-hidden="true"></i>
-                <span className="badge"></span>
+                <span className="badge">{this.getCartItemNum()}</span>
               </button>
             </div>
           </div>
