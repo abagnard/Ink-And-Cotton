@@ -17,7 +17,10 @@ export class CartIndex extends React.Component {
   }
 
   checkOut() {
-    hashHistory.replace("/checkout");
+
+    (this.props.cartItems).forEach(cartItem =>{
+      this.props.deleteCartItem(cartItem.id);
+    });
   }
 
   calculateTotal(){
@@ -34,6 +37,14 @@ export class CartIndex extends React.Component {
       return(
         <div>
           <div className="all-products">
+              <div className="cart-item-details-header">
+                <div className="cart-header">
+                  <div className="header-cart-item">Item</div>
+                  <div className="header-cart-item-price">price</div>
+                  <div className="header-cart-item-quantity">Qty</div>
+                  <div className="header-cart-item-total">total</div>
+                </div>
+              </div>
             {this.props.cartItems.map(cartItem => (
               <CartIndexItem key={cartItem.id} removeCartItem = {this.props.deleteCartItem}
                 updateCartItem = {this.props.updateCartItem} cartItem = {cartItem}/>
@@ -63,16 +74,6 @@ export class CartIndex extends React.Component {
           <p className="new-products-title">Your Cart</p>
           <p><Link to="/">continue shopping</Link></p>
         </div>
-        <div className="all-products">
-            <div className="cart-item-details-header">
-              <div className="cart-header">
-                <div className="header-cart-item">Item</div>
-                <div className="header-cart-item-price">price</div>
-                <div className="header-cart-item-quantity">Qty</div>
-                <div className="header-cart-item-total">total</div>
-              </div>
-            </div>
-        </div>
         {this.checkCart()}
       </div>
     );
@@ -92,3 +93,6 @@ export class CartIndex extends React.Component {
 //   return totalVals.reduce(getSum, 0)
 //   return sum;
 // }
+
+
+    // hashHistory.replace("/checkout");

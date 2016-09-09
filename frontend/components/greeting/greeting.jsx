@@ -65,7 +65,7 @@ class Greeting extends React.Component {
           <div className="header-subgroup left">
             <div className="nav-buttons">
               <button onClick={this.goHome}><i className="fa fa-home" aria-hidden="true"></i></button>
-              <button className="header-logout" onClick={(e) => this.logoutPreventDefault(e, logout)}><i className="fa fa-sign-out" aria-hidden="true"></i></button>
+              <button className="header-logout" onClick={(e) => this.logoutPreventDefault(e, logout)}>logout</button>
             </div>
           </div>
           <div className="header-subgroup">
@@ -89,7 +89,7 @@ class Greeting extends React.Component {
               < SearchContainer />
               <button className="cart-button" onClick={this.enterCart}>
                 <i className="fa fa-shopping-cart" aria-hidden="true"></i>
-                <span className="badge">{this.getCartItemNum()}</span>
+                <span className="cart-badge">{this.getCartItemNum()}</span>
               </button>
             </div>
           </div>
@@ -102,3 +102,6 @@ class Greeting extends React.Component {
 }
 
 export default Greeting;
+
+
+// <button className="header-logout" onClick={(e) => this.logoutPreventDefault(e, logout)}><i className="fa fa-sign-out" aria-hidden="true"></i></button>

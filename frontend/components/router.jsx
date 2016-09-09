@@ -60,10 +60,10 @@ class AppRouter extends React.Component{
             <Route path="/inks" component={ MediumIndexContainer }/>
             <Route path="/cottons" component={ MediumIndexContainer }/>
             <Route path="/all" component={ MediumIndexContainer }/>
-            <Route path="/all" component={ MediumIndexContainer }/>
             <Route path="/about" component={ AboutContainer }/>
             <Route path="/contact-us" component={ ContactUsContainer }/>
             <Route path="/cart" component={ CartIndexContainer }/>
+            
           </Route>
         </Route>
       </Router>
