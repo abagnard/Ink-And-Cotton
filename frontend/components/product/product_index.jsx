@@ -23,7 +23,7 @@ export class ProductIndex extends React.Component {
             <p><Link to="/inks">View All Inks</Link></p>
           </div>
           <div className="all-products">
-            {this.props.inkProducts.map(product => (
+            {this.props.inkProducts.slice(0,3).map(product => (
               <ProductIndexItem key={product.id} product = {product}/>
             ))}
           </div>
@@ -35,7 +35,7 @@ export class ProductIndex extends React.Component {
             <p><Link to="/cottons">View All Cottons</Link></p>
           </div>
           <div className="all-products">
-            {this.props.cottonProducts.map(product => (
+            {this.props.cottonProducts.slice(0,3).map(product => (
               <ProductIndexItem key={product.id} product = {product}/>
             ))}
           </div>

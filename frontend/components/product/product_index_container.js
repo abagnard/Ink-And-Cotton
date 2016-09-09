@@ -15,6 +15,7 @@ const inkProducts = state => {
 };
 
 const cottonProducts = state => {
+  
   return state ? Object.keys(state.products).filter(id => {
     if (state.products[id].medium === "cotton") {return state.products[id];}
   }).map(id => state.products[id]) : [];

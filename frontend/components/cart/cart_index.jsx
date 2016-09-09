@@ -16,11 +16,12 @@ export class CartIndex extends React.Component {
     this.props.fetchAllCartItems();
   }
 
-  checkOut() {
-
+  checkOut(e) {
+    e.stopPropagation();
     (this.props.cartItems).forEach(cartItem =>{
       this.props.deleteCartItem(cartItem.id);
     });
+    hashHistory.replace("/checkout");
   }
 
   calculateTotal(){
@@ -52,7 +53,7 @@ export class CartIndex extends React.Component {
           </div>
           <div className="total-amount">
             <p>Total: ${this.calculateTotal()}</p>
-            <button onClick={this.checkOut}>Checkout</button>
+            <button onClick={this.checkOut}>Check out</button>
           </div>
         </div>
       );
@@ -79,20 +80,3 @@ export class CartIndex extends React.Component {
     );
   }
 }
-
-// getSum(total, num){
-//   return total+num;
-// }
-//
-// getFinalTotal(){
-//   this.props.fetchAllCartItems();
-//   let sum = 0;
-//    totalVals = {this.props.cartItems.map(cartItem => {(
-//      this.props.cartItem.quantity * this.props.cartItem.product.price
-//    )});};
-//   return totalVals.reduce(getSum, 0)
-//   return sum;
-// }
-
-
-    // hashHistory.replace("/checkout");

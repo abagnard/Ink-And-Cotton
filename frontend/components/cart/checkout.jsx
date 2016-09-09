@@ -4,21 +4,27 @@ import { Link } from 'react-router';
 
 export class Checkout extends React.Component {
 
-  constructor(props){
-		super(props);
-  }
-
-
   render() {
     return (
       <div className="showpage-container">
-        <div className="checkout-container">
+        <div className="checkout-notification">
           <p>Thank you for your order!</p>
+        </div>
+        <div className="checkout-link">
+          <p><Link to="/">continue shopping</Link></p>
         </div>
       </div>
     );
   }
 }
+
+
+// return(
+//   <div className="checkout-message">
+//     <p>Thank you for your order!</p>
+//     <div><Link to="/">continue shopping</Link></div>
+//   </div>
+// );
 
 // getSum(total, num){
 //   return total+num;

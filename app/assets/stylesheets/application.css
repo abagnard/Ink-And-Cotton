@@ -1052,7 +1052,9 @@ p.item-description {
 
 .contact-info {
     text-align: center;
-    margin: 50px 220px;
+    margin: 50px auto;
+    height: 150px;
+    width: 368px;
     border: 5px solid lightseagreen;
     border-radius: 5px;
     padding: 15px;
@@ -1198,4 +1200,27 @@ p.cart-item-artist a:hover {
 
 .cart-button:hover span {
     background: lightgray;
+}
+
+
+.checkout-notification p {
+    color: lightseagreen;
+    font-weight: bold;
+    font-size: 32px;
+    margin: 60px;
+    margin-bottom: 0px;
+    text-align: center;
+}
+
+
+.checkout-link p {}
+
+.checkout-link {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.checkout-link p a {
+    font-size: 20px;
+    text-transform: lowercase;
 }
