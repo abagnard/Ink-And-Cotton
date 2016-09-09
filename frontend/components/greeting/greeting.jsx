@@ -72,11 +72,11 @@ class Greeting extends React.Component {
             <ul className="header-link-list">
               <li className="header-link-list">artists
                   <ul className="header-sub-link-list">
-                    <li><Link to="/users/7">ALEX INC</Link></li>
+                    <li><Link to="/users/7">Alex Inc</Link></li>
                     <li><Link to="/users/4">Colette Miller</Link></li>
                     <li><Link to="/users/3">Maya Hayuk</Link></li>
                     <li><Link to="/users/6">Royal</Link></li>
-                    <li><Link to="/users/5">WRDSMTH</Link></li>
+                    <li><Link to="/users/5">WrdSmth</Link></li>
                   </ul>
               </li>
               <li className="header-link-list"><Link to="/all">all</Link></li>

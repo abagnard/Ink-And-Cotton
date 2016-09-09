@@ -64,14 +64,14 @@ user7 = User.create!(username: "alexink", password: "password", name: "Alex Inc"
 #ALEX INC
   ink101 = Product.create!(title: "Post No Bills", medium: "ink", artist_id: 7, description: description_alex, price: 150, in_stock: true, img_url: "http://res.cloudinary.com/dv18unrq9/image/upload/v1473005245/alex_inc_ink_post_no_bills.png")
   cotton101 = Product.create!(title: "Post No Bills Tshirt", medium: "cotton", artist_id: 7, description: description_alex_tshirt, price: 45, in_stock: true, img_url: "http://res.cloudinary.com/dv18unrq9/image/upload/v1473005077/alex_post_no_bills_tshirt.jpg")
-  cotton102 = Product.create!(title: "Post No Bills Muscle Tank", medium: "cotton", artist_id: 7, description: description_alex_tank, price: 30, in_stock: true, img_url: "http://res.cloudinary.com/dv18unrq9/image/upload/v1473005194/alex_post_no_bills_muscle_tank.jpg")
+  cotton102 = Product.create!(title: "Post No Bills Tank", medium: "cotton", artist_id: 7, description: description_alex_tank, price: 30, in_stock: true, img_url: "http://res.cloudinary.com/dv18unrq9/image/upload/v1473005194/alex_post_no_bills_muscle_tank.jpg")
 
 #COLETTE Miller
   ink71 = Product.create!(title: "Global Angel Wings", medium: "ink", artist_id: 4, description: description_cmiller_angel_wings, price: 150, in_stock: true, img_url: "http://res.cloudinary.com/dv18unrq9/image/upload/v1473005421/cmiller_global_angel_wings_white.jpg")
   ink72 = Product.create!(title: "Global Angel Wings", medium: "ink", artist_id: 4, description: description_cmiller_angel_wings, price: 150, in_stock: true, img_url: "http://res.cloudinary.com/dv18unrq9/image/upload/v1473014639/Cmiller_global_angel_wings_black.png")
   ink73 = Product.create!(title: "I Love LA", medium: "ink", artist_id: 4, description: description_cmiller_i_love_la, price: 100, in_stock: true, img_url: "http://res.cloudinary.com/dv18unrq9/image/upload/v1473014745/cmiller_i_love_LA_white.png")
   ink74 = Product.create!(title: "I Love LA", medium: "ink", artist_id: 4, description: description_cmiller_i_love_la, price: 100, in_stock: true, img_url: "http://res.cloudinary.com/dv18unrq9/image/upload/v1473014770/cmiller_i_love_LA_black.png")
-  cotton71 = Product.create!(title: "Global Angel Wings Tank", medium: "cotton", artist_id: 4, description: description_cmiller_angel_wings_tank, price: 30, in_stock: true, img_url: "http://res.cloudinary.com/dv18unrq9/image/upload/v1473014793/Cmiller_global_angel_wings_tank.jpg")
+  cotton71 = Product.create!(title: "Angel Wings Tank", medium: "cotton", artist_id: 4, description: description_cmiller_angel_wings_tank, price: 30, in_stock: true, img_url: "http://res.cloudinary.com/dv18unrq9/image/upload/v1473014793/Cmiller_global_angel_wings_tank.jpg")
   cotton72 = Product.create!(title: "I Fly LA", medium: "cotton", artist_id: 4, description: description_cmiller_i_fly_la, price: 50, in_stock: true, img_url: "http://res.cloudinary.com/dv18unrq9/image/upload/v1473439071/cmiller_i_fly_la_baseball_t.jpg")
 
 #Royal
@@ -80,8 +80,9 @@ user7 = User.create!(username: "alexink", password: "password", name: "Alex Inc"
 
 
 #COLETTE Miller
-  rev71 = Review.create!(title: "Read description!", product_id: 17, user_id: 1, rating: 2, comment: "Did not realize the wings were on the BACK of the tank! Picture makes it look like they are on the front, but they are not! Do not be fooled like I was.")
-  rev72 = Review.create!(title: "Super soft!", product_id: 17, user_id: 2, rating: 5, comment: "Loved the fabric of the tank! Wear it all the time -- even to bed!")
+  rev71 = Review.create!(title: "Read description!", product_id: 28, user_id: 1, rating: 2, comment: "Did not realize the wings were on the BACK of the tank! Picture makes it look like they are on the front, but they are not! Do not be fooled like I was.")
+  rev72 = Review.create!(title: "Super soft!", product_id: 28, user_id: 2, rating: 5, comment: "Loved the fabric of the tank! Wear it all the time -- even to bed!")
 
-#WRDSMTH
-  rev1 = Review.create!(title: "LOVE IT", product_id: 2, user_id: 1, rating: 5, comment: "My boyfriend gave me this and I absolutely love it! The framing is so professionally done...I highly reccomend it! Great gift for someone you love :) ")
+#WRDSMT
+  rev1 = Review.create!(title: "LOVE IT", product_id: 10, user_id: 1, rating: 5, comment: "My boyfriend gave me this and I absolutely love it! The framing is so professionally done...I highly reccomend it! Great gift for someone you love")
+  rev2 = Review.create!(title: "Stunning!", product_id: 9, user_id: 1, rating: 5, comment: "I get so many compliments on this piece. The colors are fantastic!")
