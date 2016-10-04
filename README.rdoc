@@ -27,7 +27,7 @@ Ink & Cotton uses custom-built authentication and never stores user passwords di
 
 **Searching**
 
-Users are able to simultaneously search for products and artists.  This uses PgSearch in order to provide multi-table searching.
+Users are able to simultaneously search for products and artists.
 
 ### Frontend
 
